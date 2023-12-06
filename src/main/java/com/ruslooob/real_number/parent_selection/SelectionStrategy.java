@@ -1,6 +1,6 @@
-package com.ruslooob.parent_selection;
+package com.ruslooob.real_number.parent_selection;
 
-import com.ruslooob.model.Parents;
+import com.ruslooob.real_number.model.Parents;
 
 public interface SelectionStrategy {
     /**

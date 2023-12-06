@@ -1,4 +1,4 @@
-package com.ruslooob.model;
+package com.ruslooob.real_number.model;
 
 import com.ruslooob.Configuration;
 

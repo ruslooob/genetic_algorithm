@@ -1,4 +1,4 @@
-package com.ruslooob.common;
+package com.ruslooob.real_number.common;
 
 public class Functions {
 

@@ -1,8 +1,8 @@
-package com.ruslooob.natural_selection;
+package com.ruslooob.real_number.natural_selection;
 
 import com.ruslooob.Configuration;
-import com.ruslooob.model.GenerationPool;
-import com.ruslooob.model.Individ;
+import com.ruslooob.real_number.model.GenerationPool;
+import com.ruslooob.real_number.model.Individ;
 
 import java.util.Comparator;
 import java.util.List;

@@ -1,8 +1,8 @@
-package com.ruslooob.recombination;
+package com.ruslooob.real_number.recombination;
 
-import com.ruslooob.model.Individ;
-import com.ruslooob.common.Pair;
-import com.ruslooob.model.Parents;
+import com.ruslooob.real_number.model.Individ;
+import com.ruslooob.real_number.common.Pair;
+import com.ruslooob.real_number.model.Parents;
 
 import java.util.Objects;
 

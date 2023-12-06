@@ -1,14 +1,13 @@
-package com.ruslooob.recombination;
+package com.ruslooob.real_number.recombination;
 
 import com.ruslooob.Configuration;
-import com.ruslooob.common.DoubleInterval;
-import com.ruslooob.common.Pair;
-import com.ruslooob.model.Individ;
-import com.ruslooob.model.Parents;
+import com.ruslooob.real_number.common.DoubleInterval;
+import com.ruslooob.real_number.common.Pair;
+import com.ruslooob.real_number.model.Individ;
+import com.ruslooob.real_number.model.Parents;
+import com.ruslooob.real_number.util.RandomUtils;
 
 import java.util.Objects;
-
-import static com.ruslooob.util.RandomUtils.generateRandomNumber;
 
 public class IntermediateRecombinationStrategy implements RecombinationStrategy {
     private static final int DIMENSIONS = Configuration.DIMENSIONS;
@@ -28,12 +27,12 @@ public class IntermediateRecombinationStrategy implements RecombinationStrategy 
     public Pair<Individ> recombine() {
         double[][] generatedSchema = generateSchema();
 
-        double[][] parentGeneticMaterials = new double[][]{
+        var parentGeneticMaterials = new double[][]{
                 parents.getFirstParent().getGeneticMaterial(),
                 parents.getSecondParent().getGeneticMaterial()
         };
 
-        double[][] childGeneticMaterials = new double[parentGeneticMaterials.length][parentGeneticMaterials[0].length];
+        var childGeneticMaterials = new double[parentGeneticMaterials.length][parentGeneticMaterials[0].length];
         for (int i = 0; i < PARENT_SIZE; i++) {
             for (int j = 0; j < generatedSchema[0].length; j++) {
                 childGeneticMaterials[i][j] = evalNewIndividGen(parentGeneticMaterials[0][j], parentGeneticMaterials[1][j], generatedSchema[i][j]);
@@ -50,7 +49,7 @@ public class IntermediateRecombinationStrategy implements RecombinationStrategy 
 
         for (int i = 0; i < PARENT_SIZE; i++) {
             for (int j = 0; j < geneticMaterialSize; j++) {
-                schema[i][j] = generateRandomNumber(alphaInterval);
+                schema[i][j] = RandomUtils.generateRandomNumber(alphaInterval);
             }
         }
         return schema;

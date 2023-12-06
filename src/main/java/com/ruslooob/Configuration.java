@@ -1,6 +1,6 @@
 package com.ruslooob;
 
-import com.ruslooob.common.DoubleInterval;
+import com.ruslooob.real_number.common.DoubleInterval;
 
 public class Configuration {
     // Размерность задачи
@@ -25,4 +25,6 @@ public class Configuration {
     public static final double INTERMEDIATE_D_CONSTANT = 0.25;
     // Доля усеченных особей от всей популяции. Используется в алгоритме селекции методом усечения.
     public static final double TRUNCATION_THRESHOLD = 0.5;
+    // Количество прогонов одного алгоритма
+    public static final int NUMBER_OF_RUNS = 50;
 }

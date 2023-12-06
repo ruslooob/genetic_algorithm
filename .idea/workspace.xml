@@ -4,21 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa837676-ee24-4498-b9ec-c10a7ae299a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/Main.java" afterDir="false" />
+    <list default="true" id="fa837676-ee24-4498-b9ec-c10a7ae299a0" name="Changes" comment="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/FloatingPointIndivid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/GeneticAlgorithmPerformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/GeneticAlgorithmPerformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/GenerationPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/GenerationPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/Individ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/Individ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/Parents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/Parents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/mutation/IndividMutator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/mutation/IndividMutator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/natural_selection/TruncationNaturalSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/natural_selection/TruncationNaturalSelection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/parent_selection/RouletteWheelSelectionStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/parent_selection/RouletteWheelSelectionStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/recombination/IntermediateRecombinationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/recombination/IntermediateRecombinationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/recombination/RecombinationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/recombination/RecombinationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/recombination/ShuffleCrossoverStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/recombination/ShuffleCrossoverStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/util/RandomUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/util/RandomUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -46,36 +56,36 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2Z9tT8elbze2bikmCxCP3p82dGd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/IdeaProjects",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/IdeaProjects&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradle clean" />
@@ -83,11 +93,11 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ruslooob.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.ruslooob.real_number.Main" />
       <module name="GeneticAlgorithm.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ruslooob.*" />
+          <option name="PATTERN" value="com.ruslooob.real_number.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,6 +117,9 @@
       </method>
     </configuration>
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <option name="configVersion" value="1" />
+      <option name="options" />
+      <option name="profiles" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
@@ -119,6 +132,30 @@
       <setting name="customPortFile" value="" />
       <setting name="fixLineNumbers" value="false" />
       <setting name="focusEditor" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FunctionsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.ruslooob.FunctionsTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="GeneticAlgorithm [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -173,6 +210,7 @@
         <env name="GRAALVM_HOME" value="C:\Program Files\graalvm-ce-java17-22.2.0\bin\" />
         <env name="USERNAME" value="Ruslan" />
         <env name="ProgramFiles(x86)" value="C:\Program Files (x86)" />
+        <env name="FPS_BROWSER_USER_PROFILE_STRING" value="Default" />
         <env name="PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL" />
         <env name="DriverData" value="C:\Windows\System32\Drivers\DriverData" />
         <env name="OneDriveConsumer" value="C:\Users\Ruslan\OneDrive" />
@@ -184,6 +222,7 @@
         <env name="ProgramFiles" value="C:\Program Files" />
         <env name="PUBLIC" value="C:\Users\Public" />
         <env name="windir" value="C:\Windows" />
+        <env name="=::" value="::\" />
         <env name="ZES_ENABLE_SYSMAN" value="1" />
         <env name="IGCCSVC_DB" value="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaIqXTOBinU6jMf4pU+znBQQAAAACAAAAAAAQZgAAAAEAACAAAAA+4CY1C9194lw5K7zDDZ+Eb/A93nsJti4arycflyEyQwAAAAAOgAAAAAIAACAAAAAnEy908K+hvFDVZdYezWbF6+KG9yLZ/V7YrzW6fYxbkWAAAAC7w19pNxLXnRaDT1OIBRAo+spYlc+WwaXHLdtUU3uKf9riNV9mu7k2FDUBdEIwC7apEAVV5Nlb0y0LRSSqt8cIJDSQAwwPBIiM2GDaJLAEP+MUtnp20Zk+P1ZAj58e6aRAAAAAILJUIJNJv5bhh3H06r+lysQDas9OfvaklUf9wys4NrzRhbiYl0ErTxX7jV+p+1vRkpyeMykZfSg1jKBebGufIw==" />
         <env name="LOCALAPPDATA" value="C:\Users\Ruslan\AppData\Local" />
@@ -191,6 +230,7 @@
         <env name="USERDOMAIN" value="DESKTOP-PGHU8SB" />
         <env name="LOGONSERVER" value="\\DESKTOP-PGHU8SB" />
         <env name="WIX" value="C:\Program Files (x86)\WiX Toolset v3.11\" />
+        <env name="FPS_BROWSER_APP_PROFILE_STRING" value="Internet Explorer" />
         <env name="JAVA_HOME" value="$USER_HOME$/.jdks/openjdk-19.0.1" />
         <env name="PROMPT" value="$P$G" />
         <env name="WT_PROFILE_ID" value="{61c54bbd-c2c6-5271-96e7-009a87ff44bf}" />
@@ -221,6 +261,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.FunctionsTest" />
         <item itemvalue="Gradle.GeneticAlgorithm [clean]" />
         <item itemvalue="Application.Main" />
       </list>
@@ -234,11 +275,52 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1661092234630</updated>
-      <workItem from="1701846130671" duration="12426000" />
+      <workItem from="1701846130671" duration="14227000" />
+      <workItem from="1701866488265" duration="2562000" />
     </task>
+    <task id="LOCAL-00001" summary="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой.">
+      <option name="closed" value="true" />
+      <created>1701860623462</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701860623462</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой.">
+      <option name="closed" value="true" />
+      <created>1701860677499</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701860677499</updated>
+    </task>
+    <task id="LOCAL-00003" summary="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой.">
+      <option name="closed" value="true" />
+      <created>1701860685318</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701860685318</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой." />
+    <option name="LAST_COMMIT_MESSAGE" value="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой." />
   </component>
 </project>

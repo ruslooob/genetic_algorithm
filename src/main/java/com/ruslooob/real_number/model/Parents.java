@@ -1,4 +1,4 @@
-package com.ruslooob.model;
+package com.ruslooob.real_number.model;
 
 public class Parents {
     private final Individ firstParent;

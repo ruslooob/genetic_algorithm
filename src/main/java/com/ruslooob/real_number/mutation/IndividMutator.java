@@ -1,7 +1,7 @@
-package com.ruslooob.mutation;
+package com.ruslooob.real_number.mutation;
 
 import com.ruslooob.Configuration;
-import com.ruslooob.model.Individ;
+import com.ruslooob.real_number.model.Individ;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

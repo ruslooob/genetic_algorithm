@@ -1,4 +1,4 @@
-package com.ruslooob.natural_selection;
+package com.ruslooob.real_number.natural_selection;
 
 public interface NaturalSelectionStrategy {
     /**

@@ -1,8 +1,8 @@
-package com.ruslooob.parent_selection;
+package com.ruslooob.real_number.parent_selection;
 
-import com.ruslooob.model.GenerationPool;
-import com.ruslooob.model.Individ;
-import com.ruslooob.model.Parents;
+import com.ruslooob.real_number.model.GenerationPool;
+import com.ruslooob.real_number.model.Individ;
+import com.ruslooob.real_number.model.Parents;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;

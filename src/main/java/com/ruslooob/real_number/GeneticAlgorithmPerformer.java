@@ -1,17 +1,19 @@
-package com.ruslooob;
+package com.ruslooob.real_number;
 
-import com.ruslooob.common.Pair;
-import com.ruslooob.model.GenerationPool;
-import com.ruslooob.model.Individ;
-import com.ruslooob.model.Parents;
-import com.ruslooob.mutation.IndividMutator;
-import com.ruslooob.natural_selection.TruncationNaturalSelection;
-import com.ruslooob.parent_selection.RouletteWheelSelectionStrategy;
-import com.ruslooob.recombination.IntermediateRecombinationStrategy;
+import com.ruslooob.Configuration;
+import com.ruslooob.real_number.common.Pair;
+import com.ruslooob.real_number.model.GenerationPool;
+import com.ruslooob.real_number.model.GeneticAlgorithmStatistics;
+import com.ruslooob.real_number.model.Individ;
+import com.ruslooob.real_number.model.Parents;
+import com.ruslooob.real_number.mutation.IndividMutator;
+import com.ruslooob.real_number.natural_selection.TruncationNaturalSelection;
+import com.ruslooob.real_number.parent_selection.RouletteWheelSelectionStrategy;
+import com.ruslooob.real_number.recombination.IntermediateRecombinationStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.ruslooob.util.RandomUtils.createRandomIndividuals;
+import static com.ruslooob.real_number.util.RandomUtils.createRandomIndividuals;
 
 // todo добавить добавить возможно создавать экземпляр с различными параметрами окружения для возможности подбора гипер-параметров
 public class GeneticAlgorithmPerformer {
@@ -21,6 +23,7 @@ public class GeneticAlgorithmPerformer {
 
     private final GenerationPool generationPool = new GenerationPool(createRandomIndividuals(Configuration.INDIVIDUALS_IN_POPULATION_COUNT));
     private int generationNumber = 0;
+    private Individ bestIndivid;
 
     public void start() {
         while (!isStopCriteriaAcquired()) {
@@ -45,6 +48,8 @@ public class GeneticAlgorithmPerformer {
             Individ bestIndivid = generationPool.getMostFitIndivid();
             log.info("step {} most fit individ: {}, fit={}", generationNumber, bestIndivid, bestIndivid.getFitness());
         }
+
+        this.bestIndivid = generationPool.getMostFitIndivid();
     }
 
     private boolean isStopCriteriaAcquired() {
@@ -57,5 +62,9 @@ public class GeneticAlgorithmPerformer {
         }
 
         return false;
+    }
+
+    public GeneticAlgorithmStatistics getStatistics() {
+        return new GeneticAlgorithmStatistics(generationNumber, bestIndivid);
     }
 }
