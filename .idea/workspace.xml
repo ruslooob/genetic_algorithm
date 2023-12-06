@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fa837676-ee24-4498-b9ec-c10a7ae299a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="ccz8zcu8" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2Z9tT8elbze2bikmCxCP3p82dGd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/IdeaProjects",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle clean" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ruslooob.Main" />
+      <module name="GeneticAlgorithm.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ruslooob.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="bbPath" value="" />
+      <setting name="parameters" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <setting name="workingDir" value="" />
+      <setting name="focusEditor" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="replPortFileType" value="STANDARD" />
+      <setting name="customPortFile" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <setting name="focusEditor" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GeneticAlgorithm [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="LiferayDockerServerConfiguration" factoryName="Liferay Docker Server">
+      <option name="passParentEnvironments" value="true" />
+      <option name="workspaceLocation" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="LiferayServerConfiguration" factoryName="Liferay Server">
+      <option name="alternativeJrePath" value="" />
+      <option name="alternativeJrePathEnabled" value="true" />
+      <option name="buildType" value="" />
+      <option name="bundleLocation" value="" />
+      <option name="developerMode" value="true" />
+      <option name="gogoShellPort" value="11311" />
+      <option name="passParentEnvironments" value="true" />
+      <option name="vmParameters" value="-Xmx2560m -XX:MaxMetaspaceSize=768m -XX:MetaspaceSize=768m" />
+      <envs>
+        <env name="USERDOMAIN_ROAMINGPROFILE" value="DESKTOP-PGHU8SB" />
+        <env name="PATH" value="$USER_HOME$/.jdks/openjdk-19.0.1/bin:null" />
+        <env name="WT_SESSION" value="c6097db5-67a4-46ac-9c62-e8c187c4c4a7" />
+        <env name="PROCESSOR_LEVEL" value="6" />
+        <env name="SESSIONNAME" value="Console" />
+        <env name="ALLUSERSPROFILE" value="C:\ProgramData" />
+        <env name="INTEL_DEV_REDIST" value="C:\Program Files (x86)\Common Files\Intel\Shared Libraries\" />
+        <env name="PROCESSOR_ARCHITECTURE" value="AMD64" />
+        <env name="MIC_LD_LIBRARY_PATH" value="C:\Program Files (x86)\Common Files\Intel\Shared Libraries\compiler\lib\mic" />
+        <env name="PSModulePath" value="C:\Users\Ruslan\OneDrive\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules" />
+        <env name="SystemDrive" value="C:" />
+        <env name="=$PROJECT_DIR$/../.." value="E:\IdeaProjects" />
+        <env name="GRAALVM_HOME" value="C:\Program Files\graalvm-ce-java17-22.2.0\bin\" />
+        <env name="USERNAME" value="Ruslan" />
+        <env name="ProgramFiles(x86)" value="C:\Program Files (x86)" />
+        <env name="PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL" />
+        <env name="DriverData" value="C:\Windows\System32\Drivers\DriverData" />
+        <env name="OneDriveConsumer" value="C:\Users\Ruslan\OneDrive" />
+        <env name="POSH_THEMES_PATH" value="C:\Users\Ruslan\AppData\Local\Programs\oh-my-posh\themes" />
+        <env name="ProgramData" value="C:\ProgramData" />
+        <env name="ProgramW6432" value="C:\Program Files" />
+        <env name="HOMEPATH" value="\Users\Ruslan" />
+        <env name="PROCESSOR_IDENTIFIER" value="Intel64 Family 6 Model 151 Stepping 5, GenuineIntel" />
+        <env name="ProgramFiles" value="C:\Program Files" />
+        <env name="PUBLIC" value="C:\Users\Public" />
+        <env name="windir" value="C:\Windows" />
+        <env name="ZES_ENABLE_SYSMAN" value="1" />
+        <env name="IGCCSVC_DB" value="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaIqXTOBinU6jMf4pU+znBQQAAAACAAAAAAAQZgAAAAEAACAAAAA+4CY1C9194lw5K7zDDZ+Eb/A93nsJti4arycflyEyQwAAAAAOgAAAAAIAACAAAAAnEy908K+hvFDVZdYezWbF6+KG9yLZ/V7YrzW6fYxbkWAAAAC7w19pNxLXnRaDT1OIBRAo+spYlc+WwaXHLdtUU3uKf9riNV9mu7k2FDUBdEIwC7apEAVV5Nlb0y0LRSSqt8cIJDSQAwwPBIiM2GDaJLAEP+MUtnp20Zk+P1ZAj58e6aRAAAAAILJUIJNJv5bhh3H06r+lysQDas9OfvaklUf9wys4NrzRhbiYl0ErTxX7jV+p+1vRkpyeMykZfSg1jKBebGufIw==" />
+        <env name="LOCALAPPDATA" value="C:\Users\Ruslan\AppData\Local" />
+        <env name="ChocolateyLastPathUpdate" value="133317606086420248" />
+        <env name="USERDOMAIN" value="DESKTOP-PGHU8SB" />
+        <env name="LOGONSERVER" value="\\DESKTOP-PGHU8SB" />
+        <env name="WIX" value="C:\Program Files (x86)\WiX Toolset v3.11\" />
+        <env name="JAVA_HOME" value="$USER_HOME$/.jdks/openjdk-19.0.1" />
+        <env name="PROMPT" value="$P$G" />
+        <env name="WT_PROFILE_ID" value="{61c54bbd-c2c6-5271-96e7-009a87ff44bf}" />
+        <env name="OneDrive" value="C:\Users\Ruslan\OneDrive" />
+        <env name="APPDATA" value="C:\Users\Ruslan\AppData\Roaming" />
+        <env name="ChocolateyInstall" value="C:\ProgramData\chocolatey" />
+        <env name="ChocolateyToolsLocation" value="C:\tools" />
+        <env name="CommonProgramFiles" value="C:\Program Files\Common Files" />
+        <env name="Path" value="C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Cuminas\Document Express DjVu Plug-in\;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\Ruslan\.cargo\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\jdk-19.0.1\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\dotnet\;C:\Users\Ruslan\AppData\Roaming\Python\Python310\Scripts;E:\vagif\GnuWin32\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Ruslan\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\Ruslan\AppData\Local\Programs\Python\Python311\;C:\Users\Ruslan\.cargo\bin;C:\Users\Ruslan\AppData\Local\Microsoft\WindowsApps;C:\Users\Ruslan\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\Ruslan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Ruslan\AppData\Roaming\npm;C:\Program Files (x86)\WiX Toolset v3.11\bin;C:\tools\neovim\nvim-win64\bin;C:\Exercism;C:\Users\Ruslan\AppData\Local\Programs\oh-my-posh\bin;C:\Users\Ruslan\.dotnet\tools;C:\tools\dart-sdk\bin;C:\Users\Ruslan\AppData\Roaming\Pub\Cache\bin;" />
+        <env name="OS" value="Windows_NT" />
+        <env name="COMPUTERNAME" value="DESKTOP-PGHU8SB" />
+        <env name="intellij_args" value=".\GeneticAlgorithm\ " />
+        <env name="PROCESSOR_REVISION" value="9705" />
+        <env name="CommonProgramW6432" value="C:\Program Files\Common Files" />
+        <env name="ComSpec" value="C:\Windows\system32\cmd.exe" />
+        <env name="SystemRoot" value="C:\Windows" />
+        <env name="TEMP" value="C:\Users\Ruslan\AppData\Local\Temp" />
+        <env name="HOMEDRIVE" value="C:" />
+        <env name="USERPROFILE" value="C:\Users\Ruslan" />
+        <env name="TMP" value="C:\Users\Ruslan\AppData\Local\Temp" />
+        <env name="WSLENV" value="WT_SESSION:WT_PROFILE_ID:" />
+        <env name="CommonProgramFiles(x86)" value="C:\Program Files (x86)\Common Files" />
+        <env name="NUMBER_OF_PROCESSORS" value="12" />
+        <env name="IDEA_INITIAL_DIRECTORY" value="E:\IdeaProjects" />
+      </envs>
+      <module name="GeneticAlgorithm" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.GeneticAlgorithm [clean]" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fa837676-ee24-4498-b9ec-c10a7ae299a0" name="Changes" comment="" />
+      <created>1661092234630</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661092234630</updated>
+      <workItem from="1701846130671" duration="12426000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
