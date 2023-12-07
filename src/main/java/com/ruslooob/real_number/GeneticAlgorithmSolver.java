@@ -1,6 +1,5 @@
 package com.ruslooob.real_number;
 
-import com.ruslooob.Configuration;
 import com.ruslooob.common.GeneticAlgorithmStatistics;
 import com.ruslooob.common.Pair;
 import com.ruslooob.common.Point2D;

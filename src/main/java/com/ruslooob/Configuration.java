@@ -31,6 +31,8 @@ public class Configuration {
     private double truncationThreshold = 0.5;
     // Количество прогонов одного алгоритма
     private int numberOfRuns = 50;
+    // величина ошибки, которая будет считаться за неудачный запуск алгоритма
+    private double errorThreshold = 0.5;
 
     private Configuration() {
     }
@@ -145,16 +147,38 @@ public class Configuration {
         this.numberOfRuns = numberOfRuns;
     }
 
+    public double getErrorThreshold() {
+        return errorThreshold;
+    }
+
+    public void setErrorThreshold(double errorThreshold) {
+        this.errorThreshold = errorThreshold;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Configuration that = (Configuration) o;
-        return dimensions == that.dimensions && individualsInPopulationCount == that.individualsInPopulationCount && Double.compare(recombinationRate, that.recombinationRate) == 0 && maxGenerationsCount == that.maxGenerationsCount && Double.compare(convergentThreshold, that.convergentThreshold) == 0 && Double.compare(mutationRate, that.mutationRate) == 0 && Double.compare(perturbationRange, that.perturbationRange) == 0 && Double.compare(precision, that.precision) == 0 && Double.compare(intermediateDConstant, that.intermediateDConstant) == 0 && Double.compare(truncationThreshold, that.truncationThreshold) == 0 && numberOfRuns == that.numberOfRuns && Objects.equals(xInterval, that.xInterval) && Objects.equals(yInterval, that.yInterval);
+        return dimensions == that.dimensions
+                && individualsInPopulationCount == that.individualsInPopulationCount
+                && Double.compare(recombinationRate, that.recombinationRate) == 0
+                && maxGenerationsCount == that.maxGenerationsCount
+                && Double.compare(convergentThreshold, that.convergentThreshold) == 0
+                && Double.compare(mutationRate, that.mutationRate) == 0
+                && Double.compare(perturbationRange, that.perturbationRange) == 0
+                && Double.compare(precision, that.precision) == 0
+                && Double.compare(intermediateDConstant, that.intermediateDConstant) == 0
+                && Double.compare(truncationThreshold, that.truncationThreshold) == 0
+                && numberOfRuns == that.numberOfRuns && Objects.equals(xInterval, that.xInterval)
+                && Objects.equals(yInterval, that.yInterval)
+                && Double.compare(errorThreshold, that.errorThreshold) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dimensions, individualsInPopulationCount, recombinationRate, maxGenerationsCount, convergentThreshold, mutationRate, perturbationRange, xInterval, yInterval, precision, intermediateDConstant, truncationThreshold, numberOfRuns);
+        return Objects.hash(dimensions, individualsInPopulationCount, recombinationRate, maxGenerationsCount,
+                convergentThreshold, mutationRate, perturbationRange, xInterval, yInterval, precision, intermediateDConstant,
+                truncationThreshold, numberOfRuns, errorThreshold);
     }
 }

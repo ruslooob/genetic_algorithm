@@ -17,18 +17,18 @@ import static com.ruslooob.position_code.util.RandomUtils.createRandomIndividual
 
 
 // todo добавить добавить возможно создавать экземпляр с различными параметрами окружения для возможности подбора гипер-параметров
-public class GeneticAlgorithmPerformer {
-    private static final Logger log = LoggerFactory.getLogger(GeneticAlgorithmPerformer.class);
+public class GeneticAlgorithmSolver {
+    private static final Logger log = LoggerFactory.getLogger(GeneticAlgorithmSolver.class);
 
     private static final int REPRODUCTIONS_PER_GENERATION_COUNT = (int) (getConfig().getRecombinationRate() * getConfig().getIndividualsInPopulationCount());
     private final GenerationPool generationPool = new GenerationPool(createRandomIndividuals(getConfig().getIndividualsInPopulationCount()));
     private int generationNumber = 0;
     private Individ bestIndivid;
 
-    public GeneticAlgorithmPerformer() {
+    public GeneticAlgorithmSolver() {
     }
 
-    public void start() {
+    public void solve() {
         while (!isStopCriteriaAcquired()) {
             for (int i = 0; i < REPRODUCTIONS_PER_GENERATION_COUNT; i++) {
                 Parents parents = new RouletteWheelSelectionStrategy(generationPool)

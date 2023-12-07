@@ -6,11 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="fa837676-ee24-4498-b9ec-c10a7ae299a0" name="Changes" comment="Принято решение не обобщать алгоритм для Binary и floating-point, а написать два похожих функционала в разных пакетах.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/GeneticAlgorithmTuner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/GeneticAlgorithmTuner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/common/GeneticAlgorithmStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/common/GeneticAlgorithmStatistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/GeneticAlgorithmPerformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/GeneticAlgorithmSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/crossingover/ShuffleCrossoverStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/crossingover/ShuffleCrossoverStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/model/Individ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/model/Individ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/model/Individ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/model/Individ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/report/StatisticsExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/report/StatisticsExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/GeneticAlgorithmSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/GeneticAlgorithmSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,12 +68,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.GeneticAlgorithm [:Main.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/IdeaProjects/GeneticAlgorithm/src/main/java/com/ruslooob/position_code",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -232,6 +236,7 @@
         <env name="GRAALVM_HOME" value="C:\Program Files\graalvm-ce-java17-22.2.0\bin\" />
         <env name="USERNAME" value="Ruslan" />
         <env name="ProgramFiles(x86)" value="C:\Program Files (x86)" />
+        <env name="TOOLBOX_VERSION" value="2.1.1.18388" />
         <env name="FPS_BROWSER_USER_PROFILE_STRING" value="Default" />
         <env name="PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC" />
         <env name="DriverData" value="C:\Windows\System32\Drivers\DriverData" />
@@ -250,6 +255,7 @@
         <env name="LOCALAPPDATA" value="C:\Users\Ruslan\AppData\Local" />
         <env name="ChocolateyLastPathUpdate" value="133317606086420248" />
         <env name="USERDOMAIN" value="DESKTOP-PGHU8SB" />
+        <env name="IJ_RESTARTER_LOG" value="C:\Users\Ruslan\AppData\Local\JetBrains\IntelliJIdea2023.3\log\restarter.log" />
         <env name="LOGONSERVER" value="\\DESKTOP-PGHU8SB" />
         <env name="WIX" value="C:\Program Files (x86)\WiX Toolset v3.11\" />
         <env name="FPS_BROWSER_APP_PROFILE_STRING" value="Internet Explorer" />
@@ -299,6 +305,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-3183f394aec4-f0552fc0" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -311,7 +324,9 @@
       <workItem from="1701866488265" duration="2562000" />
       <workItem from="1701869054485" duration="4708000" />
       <workItem from="1701889263741" duration="8474000" />
-      <workItem from="1701931487626" duration="10174000" />
+      <workItem from="1701931487626" duration="10708000" />
+      <workItem from="1701948701163" duration="2017000" />
+      <workItem from="1701956926112" duration="2964000" />
     </task>
     <task id="LOCAL-00001" summary="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой.">
       <option name="closed" value="true" />

@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.ToDoubleFunction;
+import java.util.stream.Collectors;
 
 public class Main {
     private static final Logger log = LoggerFactory.getLogger(Main.class);
@@ -28,8 +29,10 @@ public class Main {
         log.info("=====Algo statistics=====");
         int averageGenerations = (int) calculateAverage(statistics, GeneticAlgorithmStatistics::generationNumberCount);
         double averageErrorRate = calculateAverage(statistics, GeneticAlgorithmStatistics::errorRate);
+        int errorRuns = (int) statistics.stream().filter(stat -> stat.errorRate() > 0.5).count();
         log.info("Average number of generation to find optimum: {}", averageGenerations);
         log.info("Mean error rate: {}", averageErrorRate);
+        log.info("Error runs: {}", errorRuns);
         new StatisticsExporter(config, "real_number")
                 .export(averageGenerations, averageErrorRate);
     }

@@ -3,6 +3,7 @@ package com.ruslooob.position_code.model;
 import com.ruslooob.position_code.util.DiscreteIntervalConverter;
 
 import java.security.SecureRandom;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
 
@@ -39,6 +40,10 @@ public class Individ implements Comparable<Individ> {
         return new Individ(geneticMaterialX, geneticMaterialY);
     }
 
+    /**
+     * метод нужен для определения возможности существования гена с такими параметрами
+     * это все из-за особенности мутации + позиционного кодирования.
+     */
     public static boolean isValid(String geneticMaterialX, String geneticMaterialY) {
         return Integer.parseInt(geneticMaterialX, 2) <= xIntervalConverter.getNumberOfSteps()
                 && Integer.parseInt(geneticMaterialY, 2) <= yIntervalConverter.getNumberOfSteps();
@@ -72,24 +77,47 @@ public class Individ implements Comparable<Individ> {
     public void mutate() {
         for (int i = 0; i < geneticMaterialX.length(); i++) {
             if (random.nextDouble() < getConfig().getMutationRate()) {
-                char mutatedBit = (geneticMaterialX.charAt(i) == '0') ? '1' : '0';
-                geneticMaterialX.setCharAt(i, mutatedBit);
-                //rollback
-                if (!isValid(geneticMaterialX.toString(), geneticMaterialY.toString())) {
-                   geneticMaterialX.setCharAt(i, (geneticMaterialX.charAt(i) == '0') ? '1' : '0');
-                }
+                tryInvertXGen(i);
             }
         }
 
         for (int i = 0; i < geneticMaterialY.length(); i++) {
             if (random.nextDouble() < getConfig().getMutationRate()) {
-                char mutatedBit = (geneticMaterialY.charAt(i) == '0') ? '1' : '0';
-                geneticMaterialY.setCharAt(i, mutatedBit);
-                //rollback
-                if (!isValid(geneticMaterialX.toString(), geneticMaterialY.toString())) {
-                    geneticMaterialY.setCharAt(i, (geneticMaterialY.charAt(i) == '0') ? '1' : '0');
-                }
+                tryInvertYGen(i);
             }
+        }
+    }
+
+    public void trySetXGen(int index, char bit) {
+        StringBuilder xCopy = new StringBuilder(geneticMaterialX);
+        xCopy.setCharAt(index, bit);
+        if (isValid(xCopy.toString(), geneticMaterialY.toString())) {
+            geneticMaterialX.setCharAt(index, bit);
+        }
+    }
+
+    public void tryInvertXGen(int index) {
+        StringBuilder xCopy = new StringBuilder(geneticMaterialX);
+        char mutatedBit = (geneticMaterialX.charAt(index) == '0') ? '1' : '0';
+        xCopy.setCharAt(index, mutatedBit);
+        if (isValid(xCopy.toString(), geneticMaterialY.toString())) {
+            geneticMaterialX.setCharAt(index, mutatedBit);
+        }
+    }
+
+    public void trySetYGen(int index, char bit) {
+        StringBuilder yCopy = new StringBuilder(geneticMaterialY);
+        yCopy.setCharAt(index, bit);
+        if (isValid(geneticMaterialX.toString(), yCopy.toString())) {
+            geneticMaterialY.setCharAt(index, bit);
+        }
+    }
+    public void tryInvertYGen(int index) {
+        StringBuilder yCopy = new StringBuilder(geneticMaterialY);
+        char mutatedBit = (geneticMaterialY.charAt(index) == '0') ? '1' : '0';
+        yCopy.setCharAt(index, mutatedBit);
+        if (isValid(geneticMaterialX.toString(), yCopy.toString())) {
+            geneticMaterialY.setCharAt(index, mutatedBit);
         }
     }
 

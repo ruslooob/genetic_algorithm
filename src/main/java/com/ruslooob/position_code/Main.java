@@ -20,16 +20,18 @@ public class Main {
 
         for (int i = 0; i < getConfig().getNumberOfRuns(); i++) {
             log.info("\nRUN#{}", i + 1);
-            var geneticAlgorithm = new GeneticAlgorithmPerformer();
-            geneticAlgorithm.start();
+            var geneticAlgorithm = new GeneticAlgorithmSolver();
+            geneticAlgorithm.solve();
             statistics.add(geneticAlgorithm.getStatistics());
         }
 
         log.info("=====Algo statistics=====");
         int averageGenerations = (int) calculateAverage(statistics, GeneticAlgorithmStatistics::generationNumberCount);
-        log.info("Average number of generation to find optimum: {}", averageGenerations);
         double averageErrorRate = calculateAverage(statistics, GeneticAlgorithmStatistics::errorRate);
+        int errorRuns = (int) statistics.stream().filter(stat -> stat.errorRate() > 0.5).count();
+        log.info("Average number of generation to find optimum: {}", averageGenerations);
         log.info("Mean error rate: {}", averageErrorRate);
+        log.info("Error runs: {}", errorRuns);
         new StatisticsExporter(config, "position_code")
                 .export(averageGenerations, averageErrorRate);
     }
