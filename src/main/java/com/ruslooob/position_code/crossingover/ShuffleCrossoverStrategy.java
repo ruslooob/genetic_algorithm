@@ -14,7 +14,7 @@ public class ShuffleCrossoverStrategy implements RecombinationStrategy {
         this.parents = Objects.requireNonNull(parents);
     }
 
-    @Override//todo подумать над выносом в individual
+    @Override//todo подумать над выносом в individual & return List instead of Pair to avoid null issues
     public Pair<Individ> recombine() {
         Individ parent1 = parents.getFirstParent();
         Individ parent2 = parents.getSecondParent();

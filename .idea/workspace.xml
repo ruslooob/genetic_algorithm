@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa837676-ee24-4498-b9ec-c10a7ae299a0" name="Changes" comment="Принято решение не обобщать алгоритм для Binary и floating-point, а написать два похожих функционала в разных пакетах.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/GeneticAlgorithmPerformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/GeneticAlgorithmSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/crossingover/ShuffleCrossoverStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/crossingover/ShuffleCrossoverStrategy.java" afterDir="false" />
+    <list default="true" id="fa837676-ee24-4498-b9ec-c10a7ae299a0" name="Changes" comment="Небольшой рефакторинг position_code пакета">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/model/Individ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/model/Individ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/GeneticAlgorithmSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/GeneticAlgorithmSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +319,7 @@
       <workItem from="1701889263741" duration="8474000" />
       <workItem from="1701931487626" duration="10708000" />
       <workItem from="1701948701163" duration="2017000" />
-      <workItem from="1701956926112" duration="2964000" />
+      <workItem from="1701956926112" duration="3502000" />
     </task>
     <task id="LOCAL-00001" summary="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой.">
       <option name="closed" value="true" />
@@ -360,7 +353,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701869320856</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Небольшой рефакторинг position_code пакета">
+      <option name="closed" value="true" />
+      <created>1701960216454</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701960216455</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +381,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой." />
     <MESSAGE value="Принято решение не обобщать алгоритм для Binary и floating-point, а написать два похожих функционала в разных пакетах." />
-    <option name="LAST_COMMIT_MESSAGE" value="Принято решение не обобщать алгоритм для Binary и floating-point, а написать два похожих функционала в разных пакетах." />
+    <MESSAGE value="Небольшой рефакторинг position_code пакета" />
+    <option name="LAST_COMMIT_MESSAGE" value="Небольшой рефакторинг position_code пакета" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

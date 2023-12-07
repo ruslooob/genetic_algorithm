@@ -97,12 +97,8 @@ public class Individ implements Comparable<Individ> {
     }
 
     public void tryInvertXGen(int index) {
-        StringBuilder xCopy = new StringBuilder(geneticMaterialX);
         char mutatedBit = (geneticMaterialX.charAt(index) == '0') ? '1' : '0';
-        xCopy.setCharAt(index, mutatedBit);
-        if (isValid(xCopy.toString(), geneticMaterialY.toString())) {
-            geneticMaterialX.setCharAt(index, mutatedBit);
-        }
+        trySetXGen(index, mutatedBit);
     }
 
     public void trySetYGen(int index, char bit) {
@@ -112,13 +108,10 @@ public class Individ implements Comparable<Individ> {
             geneticMaterialY.setCharAt(index, bit);
         }
     }
+
     public void tryInvertYGen(int index) {
-        StringBuilder yCopy = new StringBuilder(geneticMaterialY);
         char mutatedBit = (geneticMaterialY.charAt(index) == '0') ? '1' : '0';
-        yCopy.setCharAt(index, mutatedBit);
-        if (isValid(geneticMaterialX.toString(), yCopy.toString())) {
-            geneticMaterialY.setCharAt(index, mutatedBit);
-        }
+        trySetYGen(index, mutatedBit);
     }
 
     private double getXAsDouble() {
