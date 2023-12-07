@@ -1,6 +1,5 @@
 package com.ruslooob.real_number.natural_selection;
 
-import com.ruslooob.Configuration;
 import com.ruslooob.real_number.model.GenerationPool;
 import com.ruslooob.real_number.model.Individ;
 
@@ -9,8 +8,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import static com.ruslooob.Configuration.getConfig;
+
 public class TruncationNaturalSelection implements NaturalSelectionStrategy {
-    private static final double TRUNCATION_THRESHOLD = Configuration.TRUNCATION_THRESHOLD;
+    private static final double TRUNCATION_THRESHOLD = getConfig().getTruncationThreshold();
     private final GenerationPool generationPool;
 
 

@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import static com.ruslooob.Configuration.getConfig;
+
 public class GenerationPool {
-    public static final double CONVERGENCE_THRESHOLD = Configuration.CONVERGENT_THRESHOLD;
+    public static final double CONVERGENCE_THRESHOLD = getConfig().getConvergentThreshold();
 
     private final List<Individ> individuals = new ArrayList<>();
 

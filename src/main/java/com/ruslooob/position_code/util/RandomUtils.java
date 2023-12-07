@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static com.ruslooob.Configuration.getConfig;
+
 public class RandomUtils {
-    private static final DoubleInterval xInterval = Configuration.X_INTERVAL;
-    private static final DoubleInterval yInterval = Configuration.Y_INTERVAL;
-    private static final double PRECISION = Configuration.PRECISION;
+    private static final double PRECISION = getConfig().getPrecision();
 
     public static List<Individ> createRandomIndividuals(int n) {
         var generatedIndividuals = new ArrayList<Individ>(n);
@@ -23,9 +23,11 @@ public class RandomUtils {
     }
 
     private static Individ createRandomIndivid() {
+        DoubleInterval xInterval = getConfig().getxInterval();
+        DoubleInterval yInterval = getConfig().getyInterval();
         return Individ.fromGeneticMaterial(
                 generateRandomArray1(0, getNumberOfSteps(xInterval), (int) (Math.log(getNumberOfSteps(xInterval) + 1) / Math.log(2))),
-                generateRandomArray1(0, getNumberOfSteps(yInterval), (int) (Math.log(getNumberOfSteps(xInterval) + 1) / Math.log(2))));
+                generateRandomArray1(0, getNumberOfSteps(yInterval), (int) (Math.log(getNumberOfSteps(yInterval) + 1) / Math.log(2))));
     }
 
     public static double generateRandomNumber(DoubleInterval interval) {

@@ -2,6 +2,7 @@ package com.ruslooob.real_number;
 
 import com.ruslooob.Configuration;
 import com.ruslooob.common.GeneticAlgorithmStatistics;
+import com.ruslooob.report.StatisticsExporter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,17 +15,23 @@ public class Main {
 
     public static void main(String[] args) {
         var statistics = new ArrayList<GeneticAlgorithmStatistics>();
+        //только в этом месте в приложении может меняться конфигурация. Во всех остальных она только читается
+        var config = Configuration.INSTANCE;
 
-        for (int i = 0; i < Configuration.NUMBER_OF_RUNS; i++) {
+        for (int i = 0; i < config.getNumberOfRuns(); i++) {
             log.info("\nRUN#{}", i + 1);
-            var geneticAlgorithm = new GeneticAlgorithmPerformer();
-            geneticAlgorithm.start();
+            var geneticAlgorithm = new GeneticAlgorithmSolver();
+            geneticAlgorithm.solve();
             statistics.add(geneticAlgorithm.getStatistics());
         }
 
         log.info("=====Algo statistics=====");
-        log.info("Average number of generation to find optimum: {}", (int) calculateAverage(statistics, GeneticAlgorithmStatistics::generationNumberCount));
-        log.info("Mean error rate: {}", calculateAverage(statistics, GeneticAlgorithmStatistics::errorRate));
+        int averageGenerations = (int) calculateAverage(statistics, GeneticAlgorithmStatistics::generationNumberCount);
+        double averageErrorRate = calculateAverage(statistics, GeneticAlgorithmStatistics::errorRate);
+        log.info("Average number of generation to find optimum: {}", averageGenerations);
+        log.info("Mean error rate: {}", averageErrorRate);
+        new StatisticsExporter(config, "real_number")
+                .export(averageGenerations, averageErrorRate);
     }
 
     private static double calculateAverage(List<GeneticAlgorithmStatistics> statistics, ToDoubleFunction<? super GeneticAlgorithmStatistics> statisticsParamGetter) {

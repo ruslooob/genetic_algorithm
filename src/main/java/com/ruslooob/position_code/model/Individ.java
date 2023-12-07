@@ -1,21 +1,20 @@
 package com.ruslooob.position_code.model;
 
-import com.ruslooob.Configuration;
 import com.ruslooob.position_code.util.DiscreteIntervalConverter;
 
 import java.security.SecureRandom;
 import java.util.Objects;
 import java.util.Random;
 
-import static com.ruslooob.Configuration.MUTATION_RATE;
+import static com.ruslooob.Configuration.getConfig;
 import static com.ruslooob.common.Functions.bransinsFunction;
 
 public class Individ implements Comparable<Individ> {
     private final Random random = new SecureRandom();
     private static final DiscreteIntervalConverter xIntervalConverter = new DiscreteIntervalConverter(
-            Configuration.X_INTERVAL, Configuration.PRECISION);
+            getConfig().getxInterval(), getConfig().getPrecision());
     private static final DiscreteIntervalConverter yIntervalConverter = new DiscreteIntervalConverter(
-            Configuration.Y_INTERVAL, Configuration.PRECISION);
+            getConfig().getyInterval(), getConfig().getPrecision());
 
     private final StringBuilder geneticMaterialX = new StringBuilder();
     private final StringBuilder geneticMaterialY = new StringBuilder();
@@ -73,7 +72,7 @@ public class Individ implements Comparable<Individ> {
 
     public void mutate() {
         for (int i = 0; i < geneticMaterialX.length(); i++) {
-            if (random.nextDouble() < MUTATION_RATE) {
+            if (random.nextDouble() < getConfig().getMutationRate()) {
                 char mutatedBit = (geneticMaterialX.charAt(i) == '0') ? '1' : '0';
                 geneticMaterialX.setCharAt(i, mutatedBit);
                 //rollback
@@ -84,7 +83,7 @@ public class Individ implements Comparable<Individ> {
         }
 
         for (int i = 0; i < geneticMaterialY.length(); i++) {
-            if (random.nextDouble() < MUTATION_RATE) {
+            if (random.nextDouble() < getConfig().getMutationRate()) {
                 char mutatedBit = (geneticMaterialY.charAt(i) == '0') ? '1' : '0';
                 geneticMaterialY.setCharAt(i, mutatedBit);
                 //rollback

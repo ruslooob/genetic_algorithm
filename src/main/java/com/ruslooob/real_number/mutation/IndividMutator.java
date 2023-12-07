@@ -1,6 +1,5 @@
 package com.ruslooob.real_number.mutation;
 
-import com.ruslooob.Configuration;
 import com.ruslooob.real_number.model.Individ;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,10 +7,12 @@ import org.slf4j.LoggerFactory;
 import java.security.SecureRandom;
 import java.util.Random;
 
+import static com.ruslooob.Configuration.getConfig;
+
 public class IndividMutator {
     private static final Logger log = LoggerFactory.getLogger(IndividMutator.class);
-    private static final double MUTATION_RATE = Configuration.MUTATION_RATE;
-    private static final double PERTURBATION_RANGE = Configuration.PERTURBATION_RANGE;
+    private static final double MUTATION_RATE = getConfig().getMutationRate();
+    private static final double PERTURBATION_RANGE = getConfig().getPerturbationRange();
 
     private final Individ[] individuals;
 

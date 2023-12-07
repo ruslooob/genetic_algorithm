@@ -1,6 +1,5 @@
 package com.ruslooob.position_code;
 
-import com.ruslooob.Configuration;
 import com.ruslooob.common.Pair;
 import com.ruslooob.common.Point2D;
 import com.ruslooob.position_code.crossingover.ShuffleCrossoverStrategy;
@@ -13,6 +12,7 @@ import com.ruslooob.position_code.parent_selection.RouletteWheelSelectionStrateg
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static com.ruslooob.Configuration.getConfig;
 import static com.ruslooob.position_code.util.RandomUtils.createRandomIndividuals;
 
 
@@ -20,10 +20,13 @@ import static com.ruslooob.position_code.util.RandomUtils.createRandomIndividual
 public class GeneticAlgorithmPerformer {
     private static final Logger log = LoggerFactory.getLogger(GeneticAlgorithmPerformer.class);
 
-    private static final int REPRODUCTIONS_PER_GENERATION_COUNT = (int) (Configuration.RECOMBINATION_RATE * Configuration.INDIVIDUALS_IN_POPULATION_COUNT);
-    private final GenerationPool generationPool = new GenerationPool(createRandomIndividuals(Configuration.INDIVIDUALS_IN_POPULATION_COUNT));
+    private static final int REPRODUCTIONS_PER_GENERATION_COUNT = (int) (getConfig().getRecombinationRate() * getConfig().getIndividualsInPopulationCount());
+    private final GenerationPool generationPool = new GenerationPool(createRandomIndividuals(getConfig().getIndividualsInPopulationCount()));
     private int generationNumber = 0;
     private Individ bestIndivid;
+
+    public GeneticAlgorithmPerformer() {
+    }
 
     public void start() {
         while (!isStopCriteriaAcquired()) {
@@ -53,7 +56,7 @@ public class GeneticAlgorithmPerformer {
     }
 
     private boolean isStopCriteriaAcquired() {
-        if (generationNumber == Configuration.MAX_GENERATIONS_COUNT) {
+        if (generationNumber == getConfig().getMaxGenerationsCount()) {
             return true;
         }
 

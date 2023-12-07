@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static com.ruslooob.Configuration.getConfig;
+
 public class RandomUtils {
     public static List<Individ> createRandomIndividuals(int n) {
         var generatedIndividuals = new ArrayList<Individ>(n);
@@ -20,7 +22,7 @@ public class RandomUtils {
 
     private static Individ createRandomIndivid() {
         return Individ.fromGeneticMaterial(
-                new double[]{generateRandomNumber(Configuration.X_INTERVAL), generateRandomNumber(Configuration.Y_INTERVAL)});
+                new double[]{generateRandomNumber(getConfig().getxInterval()), generateRandomNumber(getConfig().getyInterval())});
     }
 
     public static double generateRandomNumber(DoubleInterval interval) {

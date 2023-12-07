@@ -17,8 +17,8 @@ public class Individ implements Comparable<Individ> {
 
     public static Individ fromGeneticMaterial(double[] geneticMaterial) {
         Objects.requireNonNull(geneticMaterial);
-
-        if (geneticMaterial.length != Configuration.DIMENSIONS) {
+        // fixme лень рефакторить, раньше было Configuration.DIMENSIONS
+        if (geneticMaterial.length != 2) {
             throw new IllegalArgumentException("Invalid dimensions passed while construct Individ instance %s"
                     .formatted(Arrays.toString(geneticMaterial)));
         }

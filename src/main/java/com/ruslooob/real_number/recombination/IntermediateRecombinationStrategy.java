@@ -1,6 +1,5 @@
 package com.ruslooob.real_number.recombination;
 
-import com.ruslooob.Configuration;
 import com.ruslooob.common.DoubleInterval;
 import com.ruslooob.common.Pair;
 import com.ruslooob.real_number.model.Individ;
@@ -9,10 +8,12 @@ import com.ruslooob.real_number.util.RandomUtils;
 
 import java.util.Objects;
 
+import static com.ruslooob.Configuration.getConfig;
+
 public class IntermediateRecombinationStrategy implements RecombinationStrategy {
-    private static final int DIMENSIONS = Configuration.DIMENSIONS;
-    private static final double D = Configuration.INTERMEDIATE_D_CONSTANT;
-    private static final DoubleInterval alphaInterval = new DoubleInterval(-D, 1 + D);
+    private static final int DIMENSIONS = getConfig().getDimensions();
+    private static final double D = getConfig().getIntermediateDConstant();
+    private static final DoubleInterval ALPHA_INTERVAL = new DoubleInterval(-D, 1 + D);
     private static final int PARENT_SIZE = 2;
 
     private final Parents parents;
@@ -49,7 +50,7 @@ public class IntermediateRecombinationStrategy implements RecombinationStrategy 
 
         for (int i = 0; i < PARENT_SIZE; i++) {
             for (int j = 0; j < geneticMaterialSize; j++) {
-                schema[i][j] = RandomUtils.generateRandomNumber(alphaInterval);
+                schema[i][j] = RandomUtils.generateRandomNumber(ALPHA_INTERVAL);
             }
         }
         return schema;

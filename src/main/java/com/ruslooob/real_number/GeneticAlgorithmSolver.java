@@ -14,21 +14,22 @@ import com.ruslooob.real_number.recombination.IntermediateRecombinationStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static com.ruslooob.Configuration.getConfig;
 import static com.ruslooob.real_number.util.RandomUtils.createRandomIndividuals;
 
 // todo добавить добавить возможно создавать экземпляр с различными параметрами окружения для возможности подбора гипер-параметров
-public class GeneticAlgorithmPerformer {
-    private static final Logger log = LoggerFactory.getLogger(GeneticAlgorithmPerformer.class);
+public class GeneticAlgorithmSolver {
+    private static final Logger log = LoggerFactory.getLogger(GeneticAlgorithmSolver.class);
 
-    private static final int REPRODUCTIONS_PER_GENERATION_COUNT = (int) (Configuration.RECOMBINATION_RATE * Configuration.INDIVIDUALS_IN_POPULATION_COUNT);
+    private final int reproductionsPerGenerationCount = (int) (getConfig().getRecombinationRate() * getConfig().getIndividualsInPopulationCount());
 
-    private final GenerationPool generationPool = new GenerationPool(createRandomIndividuals(Configuration.INDIVIDUALS_IN_POPULATION_COUNT));
+    private final GenerationPool generationPool = new GenerationPool(createRandomIndividuals(getConfig().getIndividualsInPopulationCount()));
     private int generationNumber = 0;
     private Individ bestIndivid;
 
-    public void start() {
+    public void solve() {
         while (!isStopCriteriaAcquired()) {
-            for (int i = 0; i < REPRODUCTIONS_PER_GENERATION_COUNT; i++) {
+            for (int i = 0; i < reproductionsPerGenerationCount; i++) {
                 Parents parents = new RouletteWheelSelectionStrategy(generationPool)
                         .selectParents();
 
@@ -54,7 +55,7 @@ public class GeneticAlgorithmPerformer {
     }
 
     private boolean isStopCriteriaAcquired() {
-        if (generationNumber == Configuration.MAX_GENERATIONS_COUNT) {
+        if (generationNumber == getConfig().getMaxGenerationsCount()) {
             return true;
         }
 
@@ -64,6 +65,10 @@ public class GeneticAlgorithmPerformer {
         }
 
         return false;
+    }
+
+    public Individ getBestIndivid() {
+        return bestIndivid;
     }
 
     private double getErrorRate(Individ target) {
