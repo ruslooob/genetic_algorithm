@@ -4,29 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa837676-ee24-4498-b9ec-c10a7ae299a0" name="Changes" comment="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/FloatingPointIndivid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    <list default="true" id="fa837676-ee24-4498-b9ec-c10a7ae299a0" name="Changes" comment="Принято решение не обобщать алгоритм для Binary и floating-point, а написать два похожих функционала в разных пакетах.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/crossingover/RecombinationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/GeneticAlgorithmPerformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/GeneticAlgorithmPerformer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/GenerationPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/GenerationPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/Individ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/Individ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/Parents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/model/Parents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/mutation/IndividMutator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/mutation/IndividMutator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/natural_selection/TruncationNaturalSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/natural_selection/TruncationNaturalSelection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/parent_selection/RouletteWheelSelectionStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/parent_selection/RouletteWheelSelectionStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/recombination/IntermediateRecombinationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/recombination/IntermediateRecombinationStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/recombination/RecombinationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/recombination/RecombinationStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/recombination/ShuffleCrossoverStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/recombination/ShuffleCrossoverStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/util/RandomUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/util/RandomUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/common/GeneticAlgorithmStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/common/GeneticAlgorithmStatistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/GeneticAlgorithmPerformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/GeneticAlgorithmPerformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/common/DoubleInterval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/common/DoubleInterval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/common/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/common/Functions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/common/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/common/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/model/GeneticAlgorithmStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/model/GeneticAlgorithmStatistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/model/Individ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/model/Individ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/mutation/IndividMutator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/mutation/IndividMutator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/recombination/IntermediateRecombinationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/recombination/IntermediateRecombinationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/recombination/RecombinationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/recombination/RecombinationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/recombination/ShuffleCrossoverStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/crossingover/ShuffleCrossoverStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/util/RandomUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/util/RandomUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ruslooob/FunctionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ruslooob/FunctionsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +34,27 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,7 +84,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/IdeaProjects&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/IdeaProjects/GeneticAlgorithm/src/main/java/com/ruslooob/position_code&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -86,18 +97,40 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IdeaProjects\GeneticAlgorithm\src\main\java\com\ruslooob\position_code" />
+      <recent name="E:\IdeaProjects\GeneticAlgorithm\src\main\java\com\ruslooob\position_code\crossingover" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ruslooob.position_code" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradle clean" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.com.ruslooob.position_code.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ruslooob.real_number.Main" />
       <module name="GeneticAlgorithm.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.ruslooob.real_number.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.ruslooob.position_code.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ruslooob.position_code.Main" />
+      <module name="GeneticAlgorithm.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ruslooob.position_code.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -204,14 +237,14 @@
         <env name="INTEL_DEV_REDIST" value="C:\Program Files (x86)\Common Files\Intel\Shared Libraries\" />
         <env name="PROCESSOR_ARCHITECTURE" value="AMD64" />
         <env name="MIC_LD_LIBRARY_PATH" value="C:\Program Files (x86)\Common Files\Intel\Shared Libraries\compiler\lib\mic" />
-        <env name="PSModulePath" value="C:\Users\Ruslan\OneDrive\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules" />
+        <env name="PSModulePath" value="C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules" />
         <env name="SystemDrive" value="C:" />
         <env name="=$PROJECT_DIR$/../.." value="E:\IdeaProjects" />
         <env name="GRAALVM_HOME" value="C:\Program Files\graalvm-ce-java17-22.2.0\bin\" />
         <env name="USERNAME" value="Ruslan" />
         <env name="ProgramFiles(x86)" value="C:\Program Files (x86)" />
         <env name="FPS_BROWSER_USER_PROFILE_STRING" value="Default" />
-        <env name="PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL" />
+        <env name="PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC" />
         <env name="DriverData" value="C:\Windows\System32\Drivers\DriverData" />
         <env name="OneDriveConsumer" value="C:\Users\Ruslan\OneDrive" />
         <env name="POSH_THEMES_PATH" value="C:\Users\Ruslan\AppData\Local\Programs\oh-my-posh\themes" />
@@ -254,13 +287,23 @@
         <env name="WSLENV" value="WT_SESSION:WT_PROFILE_ID:" />
         <env name="CommonProgramFiles(x86)" value="C:\Program Files (x86)\Common Files" />
         <env name="NUMBER_OF_PROCESSORS" value="12" />
-        <env name="IDEA_INITIAL_DIRECTORY" value="E:\IdeaProjects" />
+        <env name="IDEA_INITIAL_DIRECTORY" value="C:\Windows\System32" />
       </envs>
       <module name="GeneticAlgorithm" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <option name="AUTO_RESTART" value="false" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.ruslooob.position_code.Main" />
         <item itemvalue="Gradle.FunctionsTest" />
         <item itemvalue="Gradle.GeneticAlgorithm [clean]" />
         <item itemvalue="Application.Main" />
@@ -277,6 +320,9 @@
       <updated>1661092234630</updated>
       <workItem from="1701846130671" duration="14227000" />
       <workItem from="1701866488265" duration="2562000" />
+      <workItem from="1701869054485" duration="4708000" />
+      <workItem from="1701889263741" duration="8474000" />
+      <workItem from="1701931487626" duration="4218000" />
     </task>
     <task id="LOCAL-00001" summary="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой.">
       <option name="closed" value="true" />
@@ -302,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701860685318</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Принято решение не обобщать алгоритм для Binary и floating-point, а написать два похожих функционала в разных пакетах.">
+      <option name="closed" value="true" />
+      <created>1701869320856</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701869320856</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +375,28 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой." />
-    <option name="LAST_COMMIT_MESSAGE" value="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой." />
+    <MESSAGE value="Принято решение не обобщать алгоритм для Binary и floating-point, а написать два похожих функционала в разных пакетах." />
+    <option name="LAST_COMMIT_MESSAGE" value="Принято решение не обобщать алгоритм для Binary и floating-point, а написать два похожих функционала в разных пакетах." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.jdks/openjdk-19.0.1/lib/src.zip!/java.base/java/lang/NumberFormatException.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/util/RandomUtils.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="&quot;0&quot;.repeat(paddingLength) + binaryString" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

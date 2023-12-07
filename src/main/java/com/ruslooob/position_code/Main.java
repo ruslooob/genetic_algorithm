@@ -1,4 +1,4 @@
-package com.ruslooob.real_number;
+package com.ruslooob.position_code;
 
 import com.ruslooob.Configuration;
 import com.ruslooob.common.GeneticAlgorithmStatistics;

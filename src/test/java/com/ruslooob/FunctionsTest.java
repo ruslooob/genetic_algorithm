@@ -2,7 +2,7 @@ package com.ruslooob;
 
 import org.junit.jupiter.api.Test;
 
-import static com.ruslooob.real_number.common.Functions.bransinsFunction;
+import static com.ruslooob.common.Functions.bransinsFunction;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FunctionsTest {

@@ -32,6 +32,7 @@ public class IndividMutator {
             if (random.nextDouble() < MUTATION_RATE) {
                 double mutatedValue = random.nextDouble() * 2 * PERTURBATION_RANGE - PERTURBATION_RANGE;
                 log.info("Mutation individ before: {}", individ);
+                // намеренно игнорирую старое значение гена. При таком подходе алгоритм лучше работает.
                 individ.setGen(i, mutatedValue);
                 log.info("Mutation individ after: {}", individ);
             }

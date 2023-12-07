@@ -1,8 +1,8 @@
 package com.ruslooob.real_number.recombination;
 
 import com.ruslooob.Configuration;
-import com.ruslooob.real_number.common.DoubleInterval;
-import com.ruslooob.real_number.common.Pair;
+import com.ruslooob.common.DoubleInterval;
+import com.ruslooob.common.Pair;
 import com.ruslooob.real_number.model.Individ;
 import com.ruslooob.real_number.model.Parents;
 import com.ruslooob.real_number.util.RandomUtils;

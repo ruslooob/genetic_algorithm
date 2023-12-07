@@ -1,7 +1,7 @@
-package com.ruslooob.real_number.recombination;
+package com.ruslooob.position_code.crossingover;
 
 import com.ruslooob.common.Pair;
-import com.ruslooob.real_number.model.Individ;
+import com.ruslooob.position_code.model.Individ;
 
 public interface RecombinationStrategy {
     /**

@@ -1,7 +1,7 @@
 package com.ruslooob.real_number.util;
 
 import com.ruslooob.Configuration;
-import com.ruslooob.real_number.common.DoubleInterval;
+import com.ruslooob.common.DoubleInterval;
 import com.ruslooob.real_number.model.Individ;
 
 import java.security.SecureRandom;

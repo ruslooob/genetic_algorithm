@@ -1,12 +1,11 @@
 package com.ruslooob.real_number.model;
 
 import com.ruslooob.Configuration;
-import com.ruslooob.real_number.common.Functions;
 
 import java.util.Arrays;
 import java.util.Objects;
 
-import static com.ruslooob.real_number.common.Functions.bransinsFunction;
+import static com.ruslooob.common.Functions.bransinsFunction;
 
 public class Individ implements Comparable<Individ> {
     private final double[] geneticMaterial;
@@ -37,6 +36,14 @@ public class Individ implements Comparable<Individ> {
             this.fitness = -bransinsFunction(geneticMaterial[0], geneticMaterial[1]);
         }
         return this.fitness;
+    }
+
+    public double getX() {
+        return geneticMaterial[0];
+    }
+
+    public double getY() {
+        return geneticMaterial[1];
     }
 
     public double[] getGeneticMaterial() {
