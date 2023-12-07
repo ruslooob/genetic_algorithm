@@ -15,6 +15,7 @@ public class StatisticsExporter {
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final Configuration config;
     private final String algoType;
+    private final String REPORT_PATH = "reports";
 
     public StatisticsExporter(Configuration config, String algoType) {
         this.objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -31,14 +32,18 @@ public class StatisticsExporter {
                     Среднее количество поколений: %s
                     Средняя величина ошибки: %s
                     """.formatted(configString, averageGenerations, errorRate);
-            Files.write(Path.of(getPath()), report.getBytes(), StandardOpenOption.CREATE);
+            Path reportDirPath = Path.of(REPORT_PATH);
+            if (!Files.exists(reportDirPath)) {
+                Files.createDirectories(reportDirPath);
+            }
+            Files.write(Path.of(getPath(errorRate)), report.getBytes(), StandardOpenOption.CREATE);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public String getPath() {
-        return "%s%s%s-statistics#%s.txt".formatted("reports", File.separator, algoType, config.hashCode());
+    public String getPath(double errorRate) {
+        return "%s%s%s-statistics#%s-error%.6f.txt".formatted(REPORT_PATH, File.separator, algoType, config.hashCode(), errorRate);
     }
 }

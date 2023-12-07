@@ -33,7 +33,6 @@ public class Individ implements Comparable<Individ> {
         this.geneticMaterialY.append(geneticMaterialY);
     }
 
-    //todo add optional
     public static Individ fromGeneticMaterial(String geneticMaterialX, String geneticMaterialY) {
         Objects.requireNonNull(geneticMaterialX);
         Objects.requireNonNull(geneticMaterialY);

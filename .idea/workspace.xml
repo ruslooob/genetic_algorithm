@@ -5,27 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa837676-ee24-4498-b9ec-c10a7ae299a0" name="Changes" comment="Принято решение не обобщать алгоритм для Binary и floating-point, а написать два похожих функционала в разных пакетах.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/GeneticAlgorithmPerformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/GeneticAlgorithmPerformer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/model/GenerationPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/model/GenerationPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/GeneticAlgorithmTuner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/GeneticAlgorithmTuner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/common/GeneticAlgorithmStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/common/GeneticAlgorithmStatistics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/model/Individ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/model/Individ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/model/PositionIndivid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/natural_selection/TruncationNaturalSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/natural_selection/TruncationNaturalSelection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/util/RandomUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/util/RandomUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/GeneticAlgorithmPerformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/GeneticAlgorithmSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/model/GenerationPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/model/GenerationPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/model/Individ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/model/Individ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/mutation/IndividMutator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/mutation/IndividMutator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/natural_selection/TruncationNaturalSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/natural_selection/TruncationNaturalSelection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/recombination/IntermediateRecombinationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/recombination/IntermediateRecombinationStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/recombination/ShuffleCrossoverStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/util/RandomUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/util/RandomUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/report/StatisticsExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/report/StatisticsExporter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +311,7 @@
       <workItem from="1701866488265" duration="2562000" />
       <workItem from="1701869054485" duration="4708000" />
       <workItem from="1701889263741" duration="8474000" />
-      <workItem from="1701931487626" duration="8729000" />
+      <workItem from="1701931487626" duration="10174000" />
     </task>
     <task id="LOCAL-00001" summary="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой.">
       <option name="closed" value="true" />

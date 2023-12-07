@@ -5,6 +5,7 @@ import com.ruslooob.Configuration;
 import java.util.Arrays;
 import java.util.Objects;
 
+import static com.ruslooob.Configuration.getConfig;
 import static com.ruslooob.common.Functions.bransinsFunction;
 
 public class Individ implements Comparable<Individ> {
@@ -17,8 +18,7 @@ public class Individ implements Comparable<Individ> {
 
     public static Individ fromGeneticMaterial(double[] geneticMaterial) {
         Objects.requireNonNull(geneticMaterial);
-        // fixme лень рефакторить, раньше было Configuration.DIMENSIONS
-        if (geneticMaterial.length != 2) {
+        if (geneticMaterial.length != getConfig().getDimensions()) {
             throw new IllegalArgumentException("Invalid dimensions passed while construct Individ instance %s"
                     .formatted(Arrays.toString(geneticMaterial)));
         }
