@@ -4,6 +4,7 @@ import com.ruslooob.Configuration;
 import com.ruslooob.common.GeneticAlgorithmStatistics;
 import com.ruslooob.common.Pair;
 import com.ruslooob.common.Point2D;
+import com.ruslooob.common.StabilizedGeneticAlgorithmStatistics;
 import com.ruslooob.real_number.model.GenerationPool;
 import com.ruslooob.real_number.model.Individ;
 import com.ruslooob.real_number.model.Parents;
@@ -15,8 +16,13 @@ import com.ruslooob.real_number.parent_selection.PanmixiaSelectionStrategy;
 import com.ruslooob.real_number.parent_selection.RouletteWheelSelectionStrategy;
 import com.ruslooob.real_number.parent_selection.SelectionStrategy;
 import com.ruslooob.real_number.recombination.IntermediateRecombinationStrategy;
+import com.ruslooob.report.StatisticsExporter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.ToDoubleFunction;
 
 import static com.ruslooob.Configuration.getConfig;
 import static com.ruslooob.real_number.util.RandomUtils.createRandomIndividuals;
@@ -35,6 +41,34 @@ public class GeneticAlgorithmSolver {
         double xDiff = point2.x() - point1.x();
         double yDiff = point2.y() - point1.y();
         return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+    }
+
+    public StabilizedGeneticAlgorithmStatistics solveStabilized() {
+        var statistics = new ArrayList<GeneticAlgorithmStatistics>();
+
+        for (int i = 0; i < getConfig().getNumberOfRuns(); i++) {
+            log.info("\nRUN#{}", i + 1);
+            var geneticAlgorithm = new GeneticAlgorithmSolver();
+            geneticAlgorithm.solve();
+            statistics.add(geneticAlgorithm.getStatistics());
+        }
+
+        log.info("=====Algo statistics=====");
+        int averageGenerations = (int) calculateAverage(statistics, GeneticAlgorithmStatistics::generationNumberCount);
+        double averageErrorRate = calculateAverage(statistics, GeneticAlgorithmStatistics::errorRate);
+        int errorRuns = (int) statistics.stream().filter(stat -> stat.errorRate() > 0.5).count();
+        log.info("Average number of generation to find optimum: {}", averageGenerations);
+        log.info("Mean error rate: {}", averageErrorRate);
+        log.info("Error runs: {}", errorRuns);
+        return new StabilizedGeneticAlgorithmStatistics(averageGenerations, averageErrorRate, errorRuns);
+//        new StatisticsExporter(getConfig(), "real_number")
+//                .export(averageGenerations, averageErrorRate);
+    }
+
+    private static double calculateAverage(List<GeneticAlgorithmStatistics> statistics, ToDoubleFunction<? super GeneticAlgorithmStatistics> statisticsParamGetter) {
+        return statistics.stream()
+                .mapToDouble(statisticsParamGetter)
+                .average().orElseThrow();
     }
 
     public void solve() {

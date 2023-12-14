@@ -4,6 +4,7 @@ import com.ruslooob.common.DoubleInterval;
 import com.ruslooob.common.NaturalSelectionStrategyType;
 import com.ruslooob.common.ParentSelectionStrategyType;
 
+import java.util.Map;
 import java.util.Objects;
 
 //todo
@@ -41,10 +42,10 @@ public class Configuration {
     private int numberOfRuns = 50;
     // величина ошибки, которая будет считаться за неудачный запуск алгоритма
     private double errorThreshold = 0.5;
-    private ParentSelectionStrategyType parentsSelectionStrategy = ParentSelectionStrategyType.PANMIXIA;
-    private NaturalSelectionStrategyType naturalSelectionStrategy = NaturalSelectionStrategyType.TOURNAMENT;
+    private ParentSelectionStrategyType parentsSelectionStrategy = ParentSelectionStrategyType.ROULETTE_WHEEL;
+    private NaturalSelectionStrategyType naturalSelectionStrategy = NaturalSelectionStrategyType.TRUNCATION;
 
-    private Configuration() {
+    public Configuration() {
     }
 
     public static Configuration getConfig() {
@@ -52,131 +53,147 @@ public class Configuration {
     }
 
     public int getDimensions() {
-        return dimensions;
+        return INSTANCE.dimensions;
     }
 
-    public void setDimensions(int dimensions) {
-        this.dimensions = dimensions;
+    public Configuration setDimensions(int dimensions) {
+        INSTANCE.dimensions = dimensions;
+        return INSTANCE;
     }
 
     public int getIndividualsInPopulationCount() {
-        return individualsInPopulationCount;
+        return INSTANCE.individualsInPopulationCount;
     }
 
-    public void setIndividualsInPopulationCount(int individualsInPopulationCount) {
-        this.individualsInPopulationCount = individualsInPopulationCount;
+    public Configuration setIndividualsInPopulationCount(int individualsInPopulationCount) {
+        INSTANCE.individualsInPopulationCount = individualsInPopulationCount;
+        return INSTANCE;
     }
 
     public double getRecombinationRate() {
         return recombinationRate;
     }
 
-    public void setRecombinationRate(double recombinationRate) {
-        this.recombinationRate = recombinationRate;
+    public Configuration setRecombinationRate(double recombinationRate) {
+        INSTANCE.recombinationRate = recombinationRate;
+        return INSTANCE;
     }
 
     public int getMaxGenerationsCount() {
         return maxGenerationsCount;
     }
 
-    public void setMaxGenerationsCount(int maxGenerationsCount) {
-        this.maxGenerationsCount = maxGenerationsCount;
+    public Configuration setMaxGenerationsCount(int maxGenerationsCount) {
+        INSTANCE.maxGenerationsCount = maxGenerationsCount;
+        return INSTANCE;
     }
 
     public double getConvergentThreshold() {
         return convergentThreshold;
     }
 
-    public void setConvergentThreshold(double convergentThreshold) {
-        this.convergentThreshold = convergentThreshold;
+    public Configuration setConvergentThreshold(double convergentThreshold) {
+        INSTANCE.convergentThreshold = convergentThreshold;
+        return INSTANCE;
     }
 
     public double getMutationRate() {
         return mutationRate;
     }
 
-    public void setMutationRate(double mutationRate) {
-        this.mutationRate = mutationRate;
+    public Configuration setMutationRate(double mutationRate) {
+        INSTANCE.mutationRate = mutationRate;
+        return INSTANCE;
     }
 
     public double getPerturbationRange() {
         return perturbationRange;
     }
 
-    public void setPerturbationRange(double perturbationRange) {
-        this.perturbationRange = perturbationRange;
+    public Configuration setPerturbationRange(double perturbationRange) {
+        INSTANCE.perturbationRange = perturbationRange;
+        return INSTANCE;
     }
 
     public DoubleInterval getxInterval() {
         return xInterval;
     }
 
-    public void setxInterval(DoubleInterval xInterval) {
-        this.xInterval = xInterval;
+    public Configuration setxInterval(DoubleInterval xInterval) {
+        INSTANCE.xInterval = xInterval;
+        return INSTANCE;
     }
 
     public DoubleInterval getyInterval() {
         return yInterval;
     }
 
-    public void setyInterval(DoubleInterval yInterval) {
-        this.yInterval = yInterval;
+    public Configuration setyInterval(DoubleInterval yInterval) {
+        INSTANCE.yInterval = yInterval;
+        return INSTANCE;
     }
 
     public double getPrecision() {
         return precision;
     }
 
-    public void setPrecision(double precision) {
-        this.precision = precision;
+    public Configuration setPrecision(double precision) {
+        INSTANCE.precision = precision;
+        return INSTANCE;
     }
 
     public double getIntermediateDConstant() {
         return intermediateDConstant;
     }
 
-    public void setIntermediateDConstant(double intermediateDConstant) {
-        this.intermediateDConstant = intermediateDConstant;
+    public Configuration setIntermediateDConstant(double intermediateDConstant) {
+        INSTANCE.intermediateDConstant = intermediateDConstant;
+        return INSTANCE;
     }
 
     public double getTruncationThreshold() {
         return truncationThreshold;
     }
 
-    public void setTruncationThreshold(double truncationThreshold) {
-        this.truncationThreshold = truncationThreshold;
+    public Configuration setTruncationThreshold(double truncationThreshold) {
+        INSTANCE.truncationThreshold = truncationThreshold;
+        return INSTANCE;
     }
 
     public int getNumberOfRuns() {
         return numberOfRuns;
     }
 
-    public void setNumberOfRuns(int numberOfRuns) {
-        this.numberOfRuns = numberOfRuns;
+    public Configuration setNumberOfRuns(int numberOfRuns) {
+        INSTANCE.numberOfRuns = numberOfRuns;
+        return INSTANCE;
     }
 
     public double getErrorThreshold() {
         return errorThreshold;
     }
 
-    public void setErrorThreshold(double errorThreshold) {
-        this.errorThreshold = errorThreshold;
+    public Configuration setErrorThreshold(double errorThreshold) {
+        INSTANCE.errorThreshold = errorThreshold;
+        return INSTANCE;
     }
 
     public ParentSelectionStrategyType getParentsSelectionStrategy() {
         return parentsSelectionStrategy;
     }
 
-    public void setParentsSelectionStrategy(ParentSelectionStrategyType parentsSelectionStrategy) {
-        this.parentsSelectionStrategy = parentsSelectionStrategy;
+    public Configuration setParentsSelectionStrategy(ParentSelectionStrategyType parentsSelectionStrategy) {
+        INSTANCE.parentsSelectionStrategy = parentsSelectionStrategy;
+        return INSTANCE;
     }
 
     public NaturalSelectionStrategyType getNaturalSelectionStrategy() {
         return naturalSelectionStrategy;
     }
 
-    public void setNaturalSelectionStrategy(NaturalSelectionStrategyType naturalSelectionStrategy) {
-        this.naturalSelectionStrategy = naturalSelectionStrategy;
+    public Configuration setNaturalSelectionStrategy(NaturalSelectionStrategyType naturalSelectionStrategy) {
+        INSTANCE.naturalSelectionStrategy = naturalSelectionStrategy;
+        return INSTANCE;
     }
 
     @Override

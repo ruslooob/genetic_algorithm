@@ -3,18 +3,26 @@ package com.ruslooob.report;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.ruslooob.Configuration;
+import com.ruslooob.common.StabilizedGeneticAlgorithmStatistics;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.List;
+
+import static com.ruslooob.Configuration.getConfig;
 
 
 public class StatisticsExporter {
+    private static final Logger log = LoggerFactory.getLogger(StatisticsExporter.class);
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final Configuration config;
-    private final String algoType;
+    private String algoType;
     private final String REPORT_PATH = "reports";
 
     public StatisticsExporter(Configuration config, String algoType) {
@@ -25,7 +33,7 @@ public class StatisticsExporter {
 
     public void export(int averageGenerations, double errorRate) {
         try {
-            String configString = objectMapper.writeValueAsString(config);
+            String configString = objectMapper.writeValueAsString(getConfig());
             String report = """
                     Конфигурация: %s
                     ____________
@@ -42,6 +50,45 @@ public class StatisticsExporter {
             throw new RuntimeException(e);
         }
     }
+
+    public void exportStabilizedResults(List<Configuration> configurations,
+                                        List<StabilizedGeneticAlgorithmStatistics> realStatistics,
+                                        List<StabilizedGeneticAlgorithmStatistics> positionCodeStatistics) {
+        exportStabilized("real-statistics.csv", configurations, realStatistics);
+        exportStabilized("position-statistics.csv", configurations, positionCodeStatistics);
+    }
+
+    private void exportStabilized(String filename,
+                                  List<Configuration> configurations,
+                                  List<StabilizedGeneticAlgorithmStatistics> stabilizedStatistics) {
+        try (var writer = new FileWriter(filename)) {
+            // Write header
+            writer.append("Метод отбора в новую популяцию,Метод отбора родителей,Вероятность мутации,Величина популяции," +
+                    "Среднее кол-во поколений, Средняя величина ошибки, Количество ошибочных запусков\n");
+            // Write body
+            for (int i = 0; i < configurations.size(); i++) {
+                Configuration config = configurations.get(i);
+                StabilizedGeneticAlgorithmStatistics stats = stabilizedStatistics.get(i);
+
+                writer.append(config.getNaturalSelectionStrategy().toString()).append(",");
+                writer.append(config.getParentsSelectionStrategy().toString()).append(",");
+                writer.append(Double.toString(config.getMutationRate())).append(",");
+                writer.append(Double.toString(config.getIndividualsInPopulationCount())).append(",");
+
+                writer.append(String.valueOf(stats.averageGenerations())).append(",");
+                writer.append(String.valueOf(stats.averageErrorRate())).append(",");
+                writer.append(String.valueOf(stats.errorRuns())).append(",");
+
+                writer.append("\n");
+            }
+
+            log.info("CSV file has been created successfully!");
+
+        } catch (IOException e) {
+            log.error("error while export statistics", e);
+        }
+    }
+
 
     public String getPath(double errorRate) {
         return "%s%s%s-statistics#%s-error%.6f.txt".formatted(REPORT_PATH, File.separator, algoType, config.hashCode(), errorRate);
