@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa837676-ee24-4498-b9ec-c10a7ae299a0" name="Changes" comment="Небольшой рефакторинг position_code пакета">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/GeneticAlgorithmTuner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/hyper_params/GeneticAlgorithmTuner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/model/Individ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/position_code/model/Individ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/GeneticAlgorithmSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/GeneticAlgorithmSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/parent_selection/PanmixiaSelectionStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruslooob/real_number/parent_selection/PanmixiaSelectionStrategy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +66,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.FunctionsTest.bransinsFunctionSecondMinimumTest3.executor": "Run",
     "Gradle.GeneticAlgorithm [:Main.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -97,7 +103,7 @@
       <command value="gradle clean" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.com.ruslooob.position_code.Main">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ruslooob.real_number.Main" />
       <module name="GeneticAlgorithm.main" />
@@ -167,6 +173,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.ruslooob.FunctionsTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="FunctionsTest.bransinsFunctionSecondMinimumTest3" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.ruslooob.FunctionsTest.bransinsFunctionSecondMinimumTest3&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -260,7 +290,7 @@
         <env name="ChocolateyInstall" value="C:\ProgramData\chocolatey" />
         <env name="ChocolateyToolsLocation" value="C:\tools" />
         <env name="CommonProgramFiles" value="C:\Program Files\Common Files" />
-        <env name="Path" value="C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Cuminas\Document Express DjVu Plug-in\;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\Ruslan\.cargo\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\jdk-19.0.1\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\dotnet\;C:\Users\Ruslan\AppData\Roaming\Python\Python310\Scripts;E:\vagif\GnuWin32\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Ruslan\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\Ruslan\AppData\Local\Programs\Python\Python311\;C:\Users\Ruslan\.cargo\bin;C:\Users\Ruslan\AppData\Local\Microsoft\WindowsApps;C:\Users\Ruslan\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\Ruslan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Ruslan\AppData\Roaming\npm;C:\Program Files (x86)\WiX Toolset v3.11\bin;C:\tools\neovim\nvim-win64\bin;C:\Exercism;C:\Users\Ruslan\AppData\Local\Programs\oh-my-posh\bin;C:\Users\Ruslan\.dotnet\tools;C:\tools\dart-sdk\bin;C:\Users\Ruslan\AppData\Roaming\Pub\Cache\bin;" />
+        <env name="Path" value="C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Cuminas\Document Express DjVu Plug-in\;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\Ruslan\.cargo\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\jdk-19.0.1\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\dotnet\;C:\Users\Ruslan\AppData\Roaming\Python\Python310\Scripts;E:\vagif\GnuWin32\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Ruslan\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\Ruslan\AppData\Local\Programs\Python\Python311\;C:\Users\Ruslan\.cargo\bin;C:\Users\Ruslan\AppData\Local\Microsoft\WindowsApps;C:\Users\Ruslan\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\Ruslan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Ruslan\AppData\Roaming\npm;C:\Program Files (x86)\WiX Toolset v3.11\bin;C:\tools\neovim\nvim-win64\bin;C:\Exercism;C:\Users\Ruslan\AppData\Local\Programs\oh-my-posh\bin;C:\Users\Ruslan\.dotnet\tools;C:\tools\dart-sdk\bin;C:\Users\Ruslan\AppData\Roaming\Pub\Cache\bin;C:\Users\Ruslan\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-6.1-full_build\bin;" />
         <env name="OS" value="Windows_NT" />
         <env name="COMPUTERNAME" value="DESKTOP-PGHU8SB" />
         <env name="intellij_args" value=".\GeneticAlgorithm\ " />
@@ -275,7 +305,7 @@
         <env name="WSLENV" value="WT_SESSION:WT_PROFILE_ID:" />
         <env name="CommonProgramFiles(x86)" value="C:\Program Files (x86)\Common Files" />
         <env name="NUMBER_OF_PROCESSORS" value="12" />
-        <env name="IDEA_INITIAL_DIRECTORY" value="C:\Windows\System32" />
+        <env name="IDEA_INITIAL_DIRECTORY" value="C:\Windows\system32" />
       </envs>
       <module name="GeneticAlgorithm" />
       <method v="2" />
@@ -291,6 +321,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.FunctionsTest.bransinsFunctionSecondMinimumTest3" />
         <item itemvalue="Application.com.ruslooob.position_code.Main" />
         <item itemvalue="Gradle.FunctionsTest" />
         <item itemvalue="Gradle.GeneticAlgorithm [clean]" />
@@ -319,7 +350,11 @@
       <workItem from="1701889263741" duration="8474000" />
       <workItem from="1701931487626" duration="10708000" />
       <workItem from="1701948701163" duration="2017000" />
-      <workItem from="1701956926112" duration="3502000" />
+      <workItem from="1701956926112" duration="3660000" />
+      <workItem from="1701972679585" duration="483000" />
+      <workItem from="1702040581445" duration="1238000" />
+      <workItem from="1702455749949" duration="668000" />
+      <workItem from="1702559736369" duration="7649000" />
     </task>
     <task id="LOCAL-00001" summary="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой.">
       <option name="closed" value="true" />
@@ -361,7 +396,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701960216455</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Небольшой рефакторинг position_code пакета">
+      <option name="closed" value="true" />
+      <created>1701960586936</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701960586936</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,6 +440,7 @@
     <watches-manager>
       <configuration name="GradleRunConfiguration">
         <watch expression="&quot;0&quot;.repeat(paddingLength) + binaryString" language="JAVA" />
+        <watch expression=" this.individuals.stream().max(Individ::compareTo).orElseThrow(() -&gt; new IllegalStateException(&quot;No most fit individ found in GenerationPool&quot;))" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

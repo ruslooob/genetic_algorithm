@@ -1,6 +1,7 @@
 package com.ruslooob.real_number.model;
 
 import com.ruslooob.Configuration;
+import com.ruslooob.common.DoubleInterval;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -9,11 +10,16 @@ import static com.ruslooob.Configuration.getConfig;
 import static com.ruslooob.common.Functions.bransinsFunction;
 
 public class Individ implements Comparable<Individ> {
+    private static final DoubleInterval xInterval = getConfig().getxInterval();
+    private static final DoubleInterval yInterval = getConfig().getyInterval();
     private final double[] geneticMaterial;
     private Double fitness;
 
     private Individ(double[] geneticMaterial) {
         this.geneticMaterial = geneticMaterial;
+        if (!xInterval.contains(geneticMaterial[0]) || !yInterval.contains(geneticMaterial[1])) {
+            throw new IllegalArgumentException("incorrect genetic material: %s".formatted(Arrays.toString(geneticMaterial)));
+        }
     }
 
     public static Individ fromGeneticMaterial(double[] geneticMaterial) {

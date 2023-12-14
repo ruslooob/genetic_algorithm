@@ -11,6 +11,8 @@ import java.util.Objects;
 import static com.ruslooob.Configuration.getConfig;
 
 public class IntermediateRecombinationStrategy implements RecombinationStrategy {
+    private static final DoubleInterval xInterval = getConfig().getxInterval();
+    private static final DoubleInterval yInterval = getConfig().getyInterval();
     private static final int DIMENSIONS = getConfig().getDimensions();
     private static final double D = getConfig().getIntermediateDConstant();
     private static final DoubleInterval ALPHA_INTERVAL = new DoubleInterval(-D, 1 + D);
@@ -40,9 +42,18 @@ public class IntermediateRecombinationStrategy implements RecombinationStrategy 
             }
         }
 
+        Individ firstChild = null;
+        if (isValidGeneticMaterial(childGeneticMaterials[0])) {
+            firstChild = Individ.fromGeneticMaterial(childGeneticMaterials[0]);
+        }
+
+        Individ secondChild = null;
+        if (isValidGeneticMaterial(childGeneticMaterials[1])) {
+            secondChild = Individ.fromGeneticMaterial(childGeneticMaterials[1]);
+        }
         return new Pair<>(
-                Individ.fromGeneticMaterial(childGeneticMaterials[0]),
-                Individ.fromGeneticMaterial(childGeneticMaterials[1]));
+                firstChild,
+                secondChild);
     }
 
     private double[][] generateSchema() {
@@ -58,5 +69,9 @@ public class IntermediateRecombinationStrategy implements RecombinationStrategy 
 
     private double evalNewIndividGen(double firstParentGen, double secondParentGen, double alpha) {
         return firstParentGen + alpha * (secondParentGen - firstParentGen);
+    }
+
+    private boolean isValidGeneticMaterial(double[] geneticMaterial) {
+        return xInterval.contains(geneticMaterial[0]) && yInterval.contains(geneticMaterial[1]);
     }
 }
