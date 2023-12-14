@@ -3,7 +3,6 @@ package com.ruslooob.position_code.model;
 import com.ruslooob.position_code.util.DiscreteIntervalConverter;
 
 import java.security.SecureRandom;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
 

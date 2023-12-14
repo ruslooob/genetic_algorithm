@@ -1,10 +1,18 @@
 package com.ruslooob;
 
 import com.ruslooob.common.DoubleInterval;
+import com.ruslooob.common.NaturalSelectionStrategyType;
+import com.ruslooob.common.ParentSelectionStrategyType;
 
 import java.util.Objects;
 
+//todo
+// Тюнинг параметров, нахождение наилучших результатов из параметров
+// Переписать api, чтобы можно было нормально пользоваться и внедрять зависимости
+// Попробовать переписать алгоритм с бинарной мутацией, с более широким интервалом
+// Прикрутить spring boot для более удобной работы с конфигурацией и DI
 public class Configuration {
+    public static Configuration INSTANCE = new Configuration();
     // Размерность задачи
     private int dimensions = 2;
     // Количество особей в популяции
@@ -20,9 +28,9 @@ public class Configuration {
     // Шаг мутации в алгоритмах с вещественынми генами
     private double perturbationRange = 0.1;
     // Интервал, на котором будет происходит поиск по X
-    private DoubleInterval xInterval = new DoubleInterval(-10, 10);
+    private DoubleInterval xInterval = new DoubleInterval(-5, 10);
     // Интервал, на котором будет происходит поиск по Y
-    private DoubleInterval yInterval = new DoubleInterval(-10, 10);
+    private DoubleInterval yInterval = new DoubleInterval(0, 15);
     // Точность, которая достигается делением интврала на части. Используется при кодировании чисел с плавающей точкой
     private double precision = 0.000_001;
     // Константа d, используется в алгоритме промежуточной рекомбинации для вещественых генов
@@ -33,14 +41,14 @@ public class Configuration {
     private int numberOfRuns = 50;
     // величина ошибки, которая будет считаться за неудачный запуск алгоритма
     private double errorThreshold = 0.5;
+    private ParentSelectionStrategyType parentsSelectionStrategy = ParentSelectionStrategyType.PANMIXIA;
+    private NaturalSelectionStrategyType naturalSelectionStrategy = NaturalSelectionStrategyType.TOURNAMENT;
 
     private Configuration() {
     }
 
-    public static final Configuration INSTANCE = new Configuration();
-
     public static Configuration getConfig() {
-       return INSTANCE;
+        return INSTANCE;
     }
 
     public int getDimensions() {
@@ -155,6 +163,22 @@ public class Configuration {
         this.errorThreshold = errorThreshold;
     }
 
+    public ParentSelectionStrategyType getParentsSelectionStrategy() {
+        return parentsSelectionStrategy;
+    }
+
+    public void setParentsSelectionStrategy(ParentSelectionStrategyType parentsSelectionStrategy) {
+        this.parentsSelectionStrategy = parentsSelectionStrategy;
+    }
+
+    public NaturalSelectionStrategyType getNaturalSelectionStrategy() {
+        return naturalSelectionStrategy;
+    }
+
+    public void setNaturalSelectionStrategy(NaturalSelectionStrategyType naturalSelectionStrategy) {
+        this.naturalSelectionStrategy = naturalSelectionStrategy;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -172,13 +196,15 @@ public class Configuration {
                 && Double.compare(truncationThreshold, that.truncationThreshold) == 0
                 && numberOfRuns == that.numberOfRuns && Objects.equals(xInterval, that.xInterval)
                 && Objects.equals(yInterval, that.yInterval)
-                && Double.compare(errorThreshold, that.errorThreshold) == 0;
+                && Double.compare(errorThreshold, that.errorThreshold) == 0
+                && parentsSelectionStrategy.compareTo(that.parentsSelectionStrategy) == 0
+                && naturalSelectionStrategy.compareTo(that.naturalSelectionStrategy) == 0;
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(dimensions, individualsInPopulationCount, recombinationRate, maxGenerationsCount,
                 convergentThreshold, mutationRate, perturbationRange, xInterval, yInterval, precision, intermediateDConstant,
-                truncationThreshold, numberOfRuns, errorThreshold);
+                truncationThreshold, numberOfRuns, errorThreshold, parentsSelectionStrategy, naturalSelectionStrategy);
     }
 }
