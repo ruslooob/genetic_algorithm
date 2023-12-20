@@ -39,7 +39,7 @@ public class Configuration {
     // Доля усеченных особей от всей популяции. Используется в алгоритме селекции методом усечения.
     private double truncationThreshold = 0.5;
     // Количество прогонов одного алгоритма
-    private int numberOfRuns = 10;
+    private int numberOfRuns = 50;
     // величина ошибки, которая будет считаться за неудачный запуск алгоритма
     private double errorThreshold = 0.5;
     private ParentSelectionStrategyType parentsSelectionStrategy = ParentSelectionStrategyType.ROULETTE_WHEEL;
@@ -227,5 +227,27 @@ public class Configuration {
         return Objects.hash(dimensions, individualsInPopulationCount, recombinationRate, maxGenerationsCount,
                 convergentThreshold, mutationRate, perturbationRange, xInterval, yInterval, precision, intermediateDConstant,
                 truncationThreshold, numberOfRuns, errorThreshold, parentsSelectionStrategy, naturalSelectionStrategy);
+    }
+
+    @Override
+    public String toString() {
+        return "Configuration{" +
+                "dimensions=" + dimensions +
+                ", individualsInPopulationCount=" + individualsInPopulationCount +
+                ", recombinationRate=" + recombinationRate +
+                ", maxGenerationsCount=" + maxGenerationsCount +
+                ", convergentThreshold=" + convergentThreshold +
+                ", mutationRate=" + mutationRate +
+                ", perturbationRange=" + perturbationRange +
+                ", xInterval=" + xInterval +
+                ", yInterval=" + yInterval +
+                ", precision=" + precision +
+                ", intermediateDConstant=" + intermediateDConstant +
+                ", truncationThreshold=" + truncationThreshold +
+                ", numberOfRuns=" + numberOfRuns +
+                ", errorThreshold=" + errorThreshold +
+                ", parentsSelectionStrategy=" + parentsSelectionStrategy +
+                ", naturalSelectionStrategy=" + naturalSelectionStrategy +
+                '}';
     }
 }

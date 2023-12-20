@@ -13,7 +13,7 @@ public class DiscreteIntervalConverter {
 
     // Convert position number (index) to real number
     public double positionToDouble(int position) {
-        if (position < 0 || position >= getNumberOfSteps()) {
+        if (position < 0 || position > getNumberOfSteps()) {
             throw new IllegalArgumentException("Position number is out of bounds position=%s bounds=%s"
                     .formatted(position, getNumberOfSteps()));
         }

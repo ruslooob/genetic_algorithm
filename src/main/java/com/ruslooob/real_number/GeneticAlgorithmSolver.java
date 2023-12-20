@@ -1,6 +1,5 @@
 package com.ruslooob.real_number;
 
-import com.ruslooob.Configuration;
 import com.ruslooob.common.GeneticAlgorithmStatistics;
 import com.ruslooob.common.Pair;
 import com.ruslooob.common.Point2D;
@@ -16,7 +15,6 @@ import com.ruslooob.real_number.parent_selection.PanmixiaSelectionStrategy;
 import com.ruslooob.real_number.parent_selection.RouletteWheelSelectionStrategy;
 import com.ruslooob.real_number.parent_selection.SelectionStrategy;
 import com.ruslooob.real_number.recombination.IntermediateRecombinationStrategy;
-import com.ruslooob.report.StatisticsExporter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
