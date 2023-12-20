@@ -13,7 +13,7 @@ import java.util.Objects;
 // Попробовать переписать алгоритм с бинарной мутацией, с более широким интервалом
 // Прикрутить spring boot для более удобной работы с конфигурацией и DI
 public class Configuration {
-    public static Configuration INSTANCE = new Configuration();
+    private static Configuration INSTANCE = new Configuration();
     // Размерность задачи
     private int dimensions = 2;
     // Количество особей в популяции
@@ -39,7 +39,7 @@ public class Configuration {
     // Доля усеченных особей от всей популяции. Используется в алгоритме селекции методом усечения.
     private double truncationThreshold = 0.5;
     // Количество прогонов одного алгоритма
-    private int numberOfRuns = 50;
+    private int numberOfRuns = 10;
     // величина ошибки, которая будет считаться за неудачный запуск алгоритма
     private double errorThreshold = 0.5;
     private ParentSelectionStrategyType parentsSelectionStrategy = ParentSelectionStrategyType.ROULETTE_WHEEL;
@@ -48,152 +48,156 @@ public class Configuration {
     public Configuration() {
     }
 
+    public static void updateConfiguration(Configuration newConfig) {
+        INSTANCE = newConfig;
+    }
+
     public static Configuration getConfig() {
         return INSTANCE;
     }
 
     public int getDimensions() {
-        return INSTANCE.dimensions;
+        return this.dimensions;
     }
 
     public Configuration setDimensions(int dimensions) {
-        INSTANCE.dimensions = dimensions;
-        return INSTANCE;
+        this.dimensions = dimensions;
+        return this;
     }
 
     public int getIndividualsInPopulationCount() {
-        return INSTANCE.individualsInPopulationCount;
+        return this.individualsInPopulationCount;
     }
 
     public Configuration setIndividualsInPopulationCount(int individualsInPopulationCount) {
-        INSTANCE.individualsInPopulationCount = individualsInPopulationCount;
-        return INSTANCE;
+        this.individualsInPopulationCount = individualsInPopulationCount;
+        return this;
     }
 
     public double getRecombinationRate() {
-        return recombinationRate;
+        return this.recombinationRate;
     }
 
     public Configuration setRecombinationRate(double recombinationRate) {
-        INSTANCE.recombinationRate = recombinationRate;
-        return INSTANCE;
+        this.recombinationRate = recombinationRate;
+        return this;
     }
 
     public int getMaxGenerationsCount() {
-        return maxGenerationsCount;
+        return this.maxGenerationsCount;
     }
 
     public Configuration setMaxGenerationsCount(int maxGenerationsCount) {
-        INSTANCE.maxGenerationsCount = maxGenerationsCount;
-        return INSTANCE;
+        this.maxGenerationsCount = maxGenerationsCount;
+        return this;
     }
 
     public double getConvergentThreshold() {
-        return convergentThreshold;
+        return this.convergentThreshold;
     }
 
     public Configuration setConvergentThreshold(double convergentThreshold) {
-        INSTANCE.convergentThreshold = convergentThreshold;
-        return INSTANCE;
+        this.convergentThreshold = convergentThreshold;
+        return this;
     }
 
     public double getMutationRate() {
-        return mutationRate;
+        return this.mutationRate;
     }
 
     public Configuration setMutationRate(double mutationRate) {
-        INSTANCE.mutationRate = mutationRate;
-        return INSTANCE;
+        this.mutationRate = mutationRate;
+        return this;
     }
 
     public double getPerturbationRange() {
-        return perturbationRange;
+        return this.perturbationRange;
     }
 
     public Configuration setPerturbationRange(double perturbationRange) {
-        INSTANCE.perturbationRange = perturbationRange;
-        return INSTANCE;
+        this.perturbationRange = perturbationRange;
+        return this;
     }
 
     public DoubleInterval getxInterval() {
-        return xInterval;
+        return this.xInterval;
     }
 
     public Configuration setxInterval(DoubleInterval xInterval) {
-        INSTANCE.xInterval = xInterval;
-        return INSTANCE;
+        this.xInterval = xInterval;
+        return this;
     }
 
     public DoubleInterval getyInterval() {
-        return yInterval;
+        return this.yInterval;
     }
 
     public Configuration setyInterval(DoubleInterval yInterval) {
-        INSTANCE.yInterval = yInterval;
-        return INSTANCE;
+        this.yInterval = yInterval;
+        return this;
     }
 
     public double getPrecision() {
-        return precision;
+        return this.precision;
     }
 
     public Configuration setPrecision(double precision) {
-        INSTANCE.precision = precision;
-        return INSTANCE;
+        this.precision = precision;
+        return this;
     }
 
     public double getIntermediateDConstant() {
-        return intermediateDConstant;
+        return this.intermediateDConstant;
     }
 
     public Configuration setIntermediateDConstant(double intermediateDConstant) {
-        INSTANCE.intermediateDConstant = intermediateDConstant;
-        return INSTANCE;
+        this.intermediateDConstant = intermediateDConstant;
+        return this;
     }
 
     public double getTruncationThreshold() {
-        return truncationThreshold;
+        return this.truncationThreshold;
     }
 
     public Configuration setTruncationThreshold(double truncationThreshold) {
-        INSTANCE.truncationThreshold = truncationThreshold;
-        return INSTANCE;
+        this.truncationThreshold = truncationThreshold;
+        return this;
     }
 
     public int getNumberOfRuns() {
-        return numberOfRuns;
+        return this.numberOfRuns;
     }
 
     public Configuration setNumberOfRuns(int numberOfRuns) {
-        INSTANCE.numberOfRuns = numberOfRuns;
-        return INSTANCE;
+        this.numberOfRuns = numberOfRuns;
+        return this;
     }
 
     public double getErrorThreshold() {
-        return errorThreshold;
+        return this.errorThreshold;
     }
 
     public Configuration setErrorThreshold(double errorThreshold) {
-        INSTANCE.errorThreshold = errorThreshold;
-        return INSTANCE;
+        this.errorThreshold = errorThreshold;
+        return this;
     }
 
     public ParentSelectionStrategyType getParentsSelectionStrategy() {
-        return parentsSelectionStrategy;
+        return this.parentsSelectionStrategy;
     }
 
     public Configuration setParentsSelectionStrategy(ParentSelectionStrategyType parentsSelectionStrategy) {
-        INSTANCE.parentsSelectionStrategy = parentsSelectionStrategy;
-        return INSTANCE;
+        this.parentsSelectionStrategy = parentsSelectionStrategy;
+        return this;
     }
 
     public NaturalSelectionStrategyType getNaturalSelectionStrategy() {
-        return naturalSelectionStrategy;
+        return this.naturalSelectionStrategy;
     }
 
     public Configuration setNaturalSelectionStrategy(NaturalSelectionStrategyType naturalSelectionStrategy) {
-        INSTANCE.naturalSelectionStrategy = naturalSelectionStrategy;
-        return INSTANCE;
+        this.naturalSelectionStrategy = naturalSelectionStrategy;
+        return this;
     }
 
     @Override

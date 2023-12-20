@@ -23,7 +23,7 @@ public class GeneticAlgorithmTuner {
         List<StabilizedGeneticAlgorithmStatistics> positionCodeStatistics = new ArrayList<>();
         for (var config : configurations) {
             // ИЗМЕНЕНИЕ ГЛОБАЛЬНОЙ ПЕРЕМЕННОЙ
-            Configuration.INSTANCE = config;
+            Configuration.updateConfiguration(config);
 
             realConfigStatistics.add(realSolver.solveStabilized());
             positionCodeStatistics.add(positionSolver.solveStabilized());
