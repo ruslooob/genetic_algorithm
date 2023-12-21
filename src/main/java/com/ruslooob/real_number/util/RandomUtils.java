@@ -26,7 +26,7 @@ public class RandomUtils {
     }
 
     public static double generateRandomNumber(DoubleInterval interval) {
-        Random random = new SecureRandom();
+        Random random = new Random();
         return interval.start() + (interval.end() - interval.start()) * random.nextDouble();
     }
 }

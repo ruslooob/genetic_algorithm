@@ -40,6 +40,8 @@ public class Configuration {
     private double truncationThreshold = 0.5;
     // Количество прогонов одного алгоритма
     private int numberOfRuns = 50;
+    // Количество процессоров для прогона программы. -1 для использования всех доступных процессоров
+    private int numberOfProcessors = -1;
     // величина ошибки, которая будет считаться за неудачный запуск алгоритма
     private double errorThreshold = 0.5;
     private ParentSelectionStrategyType parentsSelectionStrategy = ParentSelectionStrategyType.ROULETTE_WHEEL;
@@ -170,6 +172,15 @@ public class Configuration {
 
     public Configuration setNumberOfRuns(int numberOfRuns) {
         this.numberOfRuns = numberOfRuns;
+        return this;
+    }
+
+    public int getNumberOfProcessors() {
+        return numberOfProcessors;
+    }
+
+    public Configuration setNumberOfProcessors(int numberOfProcessors) {
+        this.numberOfProcessors = numberOfProcessors;
         return this;
     }
 

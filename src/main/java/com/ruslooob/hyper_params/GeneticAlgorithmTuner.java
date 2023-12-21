@@ -43,7 +43,7 @@ public class GeneticAlgorithmTuner {
         }
         executor.shutdown();
         try {
-            if (!executor.awaitTermination(300, TimeUnit.SECONDS)) {
+            if (!executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS)) {
                 executor.shutdownNow();
             }
         } catch (InterruptedException e) {

@@ -10,7 +10,7 @@ import static com.ruslooob.Configuration.getConfig;
 import static com.ruslooob.common.Functions.bransinsFunction;
 
 public class Individ implements Comparable<Individ> {
-    private final Random random = new SecureRandom();
+    private final Random random = new Random();
     private static final DiscreteIntervalConverter xIntervalConverter = new DiscreteIntervalConverter(
             getConfig().getxInterval(), getConfig().getPrecision());
     private static final DiscreteIntervalConverter yIntervalConverter = new DiscreteIntervalConverter(

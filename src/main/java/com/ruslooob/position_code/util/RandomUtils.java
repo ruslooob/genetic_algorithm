@@ -1,10 +1,8 @@
 package com.ruslooob.position_code.util;
 
-import com.ruslooob.Configuration;
 import com.ruslooob.common.DoubleInterval;
 import com.ruslooob.position_code.model.Individ;
 
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -31,18 +29,18 @@ public class RandomUtils {
     }
 
     public static double generateRandomNumber(DoubleInterval interval) {
-        Random random = new SecureRandom();
+        Random random = new Random();
         return interval.start() + (interval.end() - interval.start()) * random.nextDouble();
     }
 
     public static int generateRandomNumber(int min, int max) {
-        SecureRandom random = new SecureRandom();
+        Random random = new Random();
         return random.nextInt(max - min + 1) + min;
     }
 
     public static char[] generateRandomArray(int length) {
         char[] randomArray = new char[length];
-        Random random = new SecureRandom();
+        Random random = new Random();
 
         // Generating the sign bit (0 or 1)
         int signBit = random.nextInt(2);

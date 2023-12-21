@@ -5,7 +5,6 @@ import com.ruslooob.position_code.model.GenerationPool;
 import com.ruslooob.position_code.model.Individ;
 import com.ruslooob.position_code.model.Parents;
 
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -36,7 +35,7 @@ public class RouletteWheelSelectionStrategy implements SelectionStrategy {
         }
 
         // Select two parents using roulette wheel selection
-        Random random = new SecureRandom();
+        Random random = new Random();
         Individ parent1 = spinRouletteWheel(rouletteWheel, random.nextDouble());
         Individ parent2 = spinRouletteWheel(rouletteWheel, random.nextDouble());
 

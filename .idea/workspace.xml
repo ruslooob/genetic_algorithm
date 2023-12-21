@@ -43,9 +43,10 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="aaef55d825f99b0e8a3a5c5b11ad6eda20fb22a1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,6 +68,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.com.ruslooob.hyper_params.Main.executor": "Profiler#1",
+    "Gradle.Build GeneticAlgorithm.executor": "Run",
     "Gradle.FunctionsTest.bransinsFunctionSecondMinimumTest3.executor": "Run",
     "Gradle.GeneticAlgorithm [:Main.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -74,7 +77,7 @@
     "ShowUsagesActions.previewPropertyKey": "true",
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "aaef55d8",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/IdeaProjects/GeneticAlgorithm/src/main/java/com/ruslooob/position_code",
@@ -310,10 +313,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.ruslooob.hyper_params.Main" />
         <item itemvalue="Gradle.GeneticAlgorithm [clean]" />
         <item itemvalue="Gradle.FunctionsTest.bransinsFunctionSecondMinimumTest3" />
         <item itemvalue="Gradle.FunctionsTest" />
-        <item itemvalue="Application.com.ruslooob.hyper_params.Main" />
         <item itemvalue="Application.com.ruslooob.hyper_params.Main" />
       </list>
     </recent_temporary>
@@ -347,7 +350,7 @@
       <workItem from="1702578577446" duration="7977000" />
       <workItem from="1703074687872" duration="63000" />
       <workItem from="1703076886846" duration="17226000" />
-      <workItem from="1703143623594" duration="1823000" />
+      <workItem from="1703143623594" duration="5451000" />
     </task>
     <task id="LOCAL-00001" summary="1 версия генетического алгоритма. &#10;&#10;Пока реализован функционал для чисел с плавающей точкой.">
       <option name="closed" value="true" />
@@ -429,7 +432,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703145067250</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="добавил больше параметров в экспорт статистики">
+      <option name="closed" value="true" />
+      <created>1703145694807</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703145694807</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -4,8 +4,8 @@ import com.ruslooob.common.Pair;
 import com.ruslooob.position_code.model.Individ;
 import com.ruslooob.position_code.model.Parents;
 
-import java.security.SecureRandom;
 import java.util.Objects;
+import java.util.Random;
 
 public class ShuffleCrossoverStrategy implements RecombinationStrategy {
     private final Parents parents;
@@ -52,7 +52,7 @@ public class ShuffleCrossoverStrategy implements RecombinationStrategy {
     // функция нигде не используется, но в лекции есть совет ее использовать.
     // с ней результаты у алгоритма хуже, чем без нее
     private void swapRandomBit(Individ parent1, Individ parent2) {
-        var random = new SecureRandom();
+        var random = new Random();
         int randomXBitIdx = random.nextInt(parent1.getGeneticMaterialX().length() - 1);
         char tempXBit = parent1.getGeneticMaterialX().charAt(randomXBitIdx);
         parent1.trySetXGen(randomXBitIdx, parent2.getGeneticMaterialX().charAt(randomXBitIdx));
