@@ -10,6 +10,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.*;
+
+import static com.ruslooob.Configuration.getConfig;
 
 public class GeneticAlgorithmTuner {
     private static final Logger log = LoggerFactory.getLogger(GeneticAlgorithmTuner.class);
@@ -18,27 +21,45 @@ public class GeneticAlgorithmTuner {
     public void findBestAlgorithm() {
         var realSolver = new com.ruslooob.real_number.GeneticAlgorithmSolver();
         var positionSolver = new com.ruslooob.position_code.GeneticAlgorithmSolver();
-        List<Configuration> configurations = getConfigurations();
-        List<StabilizedGeneticAlgorithmStatistics> realConfigStatistics = new ArrayList<>();
-        List<StabilizedGeneticAlgorithmStatistics> positionCodeStatistics = new ArrayList<>();
-        for (var config : configurations) {
-            // ИЗМЕНЕНИЕ ГЛОБАЛЬНОЙ ПЕРЕМЕННОЙ
-            Configuration.updateConfiguration(config);
-            try {
-                StabilizedGeneticAlgorithmStatistics realStatistics = realSolver.solveStabilized();
-                StabilizedGeneticAlgorithmStatistics positionStatistics = positionSolver.solveStabilized();
-                /*добавляет только те результаты, которые успешны (на случай невалидной конфигурации)*/
-                realConfigStatistics.add(realStatistics);
-                positionCodeStatistics.add(positionStatistics);
-            } catch (Exception e) {
-                log.error("algorithm error with config {}", config, e);
-            }
-        }
 
+        ExecutorService executor = Executors.newFixedThreadPool(getUsingProcessorsCount());
+        BlockingQueue<StabilizedGeneticAlgorithmStatistics> realConfigStatisticsQueue = new LinkedBlockingQueue<>();
+        BlockingQueue<StabilizedGeneticAlgorithmStatistics> positionCodeStatisticsQueue = new LinkedBlockingQueue<>();
+
+        List<Configuration> configurations = getConfigurations();
+        for (Configuration config : configurations) {
+            executor.submit(() -> {
+                Configuration.updateConfiguration(config);
+                try {
+                    StabilizedGeneticAlgorithmStatistics realStatistics = realSolver.solveStabilized();
+                    StabilizedGeneticAlgorithmStatistics positionStatistics = positionSolver.solveStabilized();
+                    // добавляет только те результаты, которые успешны (на случай невалидной конфигурации)
+                    realConfigStatisticsQueue.put(realStatistics);
+                    positionCodeStatisticsQueue.put(positionStatistics);
+                } catch (Exception e) {
+                    log.error("Algorithm error with config {}", config, e);
+                }
+            });
+        }
+        executor.shutdown();
+        try {
+            if (!executor.awaitTermination(300, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
+            Thread.currentThread().interrupt();
+        }
+        // Export results
         new StatisticsExporter(/*fixme*/null,/*fixme*/null)
-                .exportStabilizedResults(configurations, realConfigStatistics, positionCodeStatistics);
-        log.info("{}", realConfigStatistics);
-        log.info("{}", positionCodeStatistics);
+                .exportStabilizedResults(configurations, new ArrayList<>(realConfigStatisticsQueue), new ArrayList<>(positionCodeStatisticsQueue));
+    }
+
+    private static int getUsingProcessorsCount() {
+        int numberOfProcessors = getConfig().getNumberOfProcessors();
+        return  numberOfProcessors == -1
+                ? Runtime.getRuntime().availableProcessors()
+                : numberOfProcessors;
     }
 
     // спаси сохрани
@@ -80,105 +101,6 @@ public class GeneticAlgorithmTuner {
                 }
             }
         }
-
-
-//        // 50 individuals
-//        // roulette wheel, truncation selection, small mutation
-//        configurations.add(new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.ROULETTE_WHEEL)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TRUNCATION)
-//                .setIndividualsInPopulationCount(50)
-//                .setMutationRate(0.01));
-//        // roulette wheel, tournament selection, small mutation
-//        configurations.add(new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.ROULETTE_WHEEL)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TOURNAMENT)
-//                .setIndividualsInPopulationCount(50)
-//                .setMutationRate(0.01));
-//        // roulette wheel, truncation selection, big mutation
-//        configurations.add((new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.ROULETTE_WHEEL)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TRUNCATION)
-//                .setIndividualsInPopulationCount(50)
-//                .setMutationRate(0.1)));
-//        // roulette whell, tournament selection, big mutation
-//        configurations.add(new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.ROULETTE_WHEEL)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TOURNAMENT)
-//                .setIndividualsInPopulationCount(50)
-//                .setMutationRate(0.1));
-//        // panmixia, truncation selection, small mutation
-//        configurations.add(new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.PANMIXIA)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TRUNCATION)
-//                .setIndividualsInPopulationCount(50)
-//                .setMutationRate(0.01));
-//        // panmixia, tournament selection, small mutation
-//        configurations.add(new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.PANMIXIA)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TOURNAMENT)
-//                .setIndividualsInPopulationCount(50)
-//                .setMutationRate(0.01));
-//        // panmixia, truncation selection big mutation
-//        configurations.add((new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.PANMIXIA)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TRUNCATION)
-//                .setIndividualsInPopulationCount(50)
-//                .setMutationRate(0.1)));
-//        // panmixia, tournament selection big mutation
-//        configurations.add(new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.PANMIXIA)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TOURNAMENT)
-//                .setIndividualsInPopulationCount(50)
-//                .setMutationRate(0.1));
-//        /// 200 individuals
-//        // roulette wheel, truncation selection, small mutation
-//        configurations.add(new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.ROULETTE_WHEEL)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TRUNCATION)
-//                .setIndividualsInPopulationCount(200)
-//                .setMutationRate(0.01));
-//        // roulette wheel, tournament selection, small mutation
-//        configurations.add(new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.ROULETTE_WHEEL)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TOURNAMENT)
-//                .setIndividualsInPopulationCount(200)
-//                .setMutationRate(0.01));
-//        // roulette wheel, truncation selection, big mutation
-//        configurations.add((new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.ROULETTE_WHEEL)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TRUNCATION)
-//                .setMutationRate(0.1)
-//                .setIndividualsInPopulationCount(200)));
-//        // roulette wheel, tournament selection, big mutation
-//        configurations.add(new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.ROULETTE_WHEEL)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TOURNAMENT)
-//                .setMutationRate(0.1)
-//                .setIndividualsInPopulationCount(200));
-//        // panmixia, truncation selection, small mutation
-//        configurations.add(new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.PANMIXIA)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TRUNCATION)
-//                .setIndividualsInPopulationCount(200));
-//        // panmixia, tournament selection, small mutation
-//        configurations.add(new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.PANMIXIA)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TOURNAMENT)
-//                .setIndividualsInPopulationCount(200)
-//                .setMutationRate(0.01));
-//        // panmixia, truncation selection big mutation
-//        configurations.add((new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.PANMIXIA)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TRUNCATION)
-//                .setMutationRate(0.1))
-//                .setIndividualsInPopulationCount(200));
-//        // panmixia, tournament selection big mutation
-//        configurations.add(new Configuration()
-//                .setParentsSelectionStrategy(ParentSelectionStrategyType.PANMIXIA)
-//                .setNaturalSelectionStrategy(NaturalSelectionStrategyType.TOURNAMENT)
-//                .setMutationRate(0.1)
-//                .setIndividualsInPopulationCount(200));
 
         return configurations;
     }
